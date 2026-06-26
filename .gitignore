@@ -1,0 +1,9 @@
+.DS_Store
+Thumbs.db
+*.log
+node_modules/
+
+# Arquivos de origem/design não usados pelo site publicado
+*.psd
+assets/Ref-imgs-loja/
+assets/Logos_fornecedores/_originais_backup/

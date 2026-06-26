@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pizzoni Tintas — Loja conceito Anjo Tintas em Criciúma. +5 mil cores, cashback para pintores, simulador de ambientes e entrega rápida para toda a região." />
+  <title>Pizzoni Tintas | Criciúma e região</title>
+
+  <!-- Open Graph / redes sociais -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Pizzoni Tintas | Criciúma e região" />
+  <meta property="og:description" content="Loja conceito Anjo Tintas em Criciúma. +5 mil cores, cashback para pintores, entrega rápida e até 10x sem juros no cartão." />
+  <meta property="og:image"       content="assets/Capa-hero.png" />
+  <meta property="og:url"         content="https://pizzonitintas.com.br/" />
+  <meta property="og:locale"      content="pt_BR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Pizzoni Tintas | Criciúma e região" />
+  <meta name="twitter:description" content="Loja conceito Anjo Tintas em Criciúma. +5 mil cores, cashback para pintores, entrega rápida e até 10x sem juros no cartão." />
+  <meta name="twitter:image"       content="assets/Capa-hero.png" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://pizzonitintas.com.br/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── FONTS ─────────────────────────────────────────────── */
+    @font-face { font-family: 'AmsiPro'; src: url('Fonts/AmsiProCondensed-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'AmsiPro'; src: url('Fonts/AmsiProCondensed-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'AmsiPro'; src: url('Fonts/AmsiProCondensed-Black.ttf') format('truetype'); font-weight: 900; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'AmsiPro'; src: url('Fonts/AmsiProCondensed-Ultra.ttf') format('truetype'); font-weight: 800; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'AmsiPro'; src: url('Fonts/AmsiProCondensed-SemiBold.ttf') format('truetype'); font-weight: 600; font-style: normal; font-display: swap; }
+
+    /* ── RESET & BASE ──────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --navy:   #1B2A6B;
+      --red:    #E5001A;
+      --white:  #FFFFFF;
+      --off:    #F8F8FA;
+      --gray:   #F1F1F5;
+      --muted:  #6B7280;
+      --dark:   #111827;
+      --border: #E4E4EF;
+      --r-sm:   8px;
+      --r-md:   14px;
+      --r-lg:   20px;
+      --r-xl:   28px;
+
+      /* ── Paleta pastel ── */
+      --p-peach:    #FFE8DF;
+      --p-sage:     #DFF2E8;
+      --p-lavender: #EAE0F8;
+      --p-butter:   #FFF5D4;
+      --p-sky:      #DEEEFF;
+      --p-rose:     #FFE0EA;
+      --p-mint:     #D8F8F0;
+      --p-amber:    #FFF0D0;
+
+      /* ── Tom de texto para cada pastel ── */
+      --p-peach-ink:    #A84830;
+      --p-sage-ink:     #2A7A50;
+      --p-lavender-ink: #6040A0;
+      --p-butter-ink:   #8A6800;
+      --p-sky-ink:      #1A5C9E;
+      --p-rose-ink:     #A03060;
+      --p-mint-ink:     #1A8068;
+      --p-amber-ink:    #8A5800;
+    }
+
+    body { font-family: 'Roboto', sans-serif; color: var(--dark); background: var(--white); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    .container { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 32px; }
+
+    /* ── EYEBROW ───────────────────────────────────────────── */
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'AmsiPro', sans-serif; font-weight: 700;
+      font-size: .78rem; letter-spacing: 2px; text-transform: uppercase; color: var(--red);
+    }
+    .eyebrow::before { content: ''; width: 18px; height: 2px; background: var(--red); border-radius: 2px; display: block; }
+    .eyebrow--light { color: var(--red); }
+    .eyebrow--light::before { background: var(--red); }
+
+    /* ── SECTION TITLE ─────────────────────────────────────── */
+    .section-title {
+      font-family: 'AmsiPro', sans-serif; font-weight: 900;
+      font-size: clamp(2.2rem, 4vw, 3.2rem); line-height: 1.05; letter-spacing: -.3px;
+    }
+
+    /* ── BUTTONS ───────────────────────────────────────────── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 9px;
+      font-family: 'AmsiPro', sans-serif; font-weight: 700;
+      font-size: 1rem; letter-spacing: .8px; text-transform: uppercase;
+      text-decoration: none; border: none; cursor: pointer; outline: none;
+      padding: 0 26px; height: 50px;
+      border-radius: var(--r-sm);
+      transition: all .2s ease;
+      white-space: nowrap; flex-shrink: 0;
+    }
+    .btn-red  { background: var(--red); color: var(--white); box-shadow: none; padding-bottom: 6px; }
+    .btn-red:hover  { background: #c02424; box-shadow: none; transform: translateY(-2px); }
+    .btn-navy { background: var(--navy); color: var(--white) !important; box-shadow: none; }
+    .btn-navy:hover, .btn-navy:visited, .btn-navy:active, .btn-navy:focus { background: #161b42; color: var(--white) !important; transform: translateY(-2px); }
+    .btn-whatsapp { background: #25D366; color: #fff !important; border: none; font-size: 1.3rem; font-weight: 700; letter-spacing: 1px; padding: 32px 52px 36px; border-radius: var(--r-sm); display: inline-flex; align-items: center; gap: 10px; text-decoration: none; transition: background .2s, transform .2s; }
+    .btn-whatsapp:hover { background: #1ebe5d; transform: translateY(-2px); color: #fff !important; }
+    .btn-whatsapp svg { position: relative; top: 3px; width: 29px; height: 29px; }
+    .btn-outline-navy { background: var(--red); color: var(--white); border: 2px solid var(--red); box-shadow: none; font-size: 1.2rem; font-weight: 900; letter-spacing: normal; padding-top: 0; padding-bottom: 4px; }
+    .btn-outline-navy:hover { background: #c02424; color: var(--white); border-color: #c02424; transform: translateY(-2px); }
+    .btn-outline-red { background: var(--red); color: var(--white); border: 2px solid var(--red); box-shadow: none; font-size: 1.2rem; font-weight: 900; letter-spacing: normal; padding-top: 0; padding-bottom: 4px; }
+    .btn-outline-red:hover { background: #c02424; color: var(--white); border-color: #c02424; transform: translateY(-2px); }
+    .btn-white { background: var(--white); color: var(--navy); }
+    .btn-white:hover { background: var(--off); transform: translateY(-2px); }
+    .btn-outline { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,.35); }
+    .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,.08); transform: translateY(-2px); }
+
+    /* ── BUTTON COLOR FIX ──────────────────────────────────── */
+    a.btn.btn-navy, a.btn.btn-navy:link, a.btn.btn-navy:visited,
+    a.btn.btn-navy:hover, a.btn.btn-navy:active, a.btn.btn-navy:focus {
+      color: #ffffff !important;
+    }
+
+    /* ── TOPBAR ────────────────────────────────────────────── */
+    .topbar { background: var(--navy); padding: 9px 0; }
+    .topbar .container { display: flex; align-items: center; justify-content: flex-end; gap: 12px; flex-wrap: wrap; }
+    .topbar-left { display: flex; align-items: center; gap: 22px; }
+    .topbar-item { display: flex; align-items: center; gap: 6px; color: rgba(255,255,255,.6); font-size: .8rem; font-weight: 700; text-decoration: none; transition: color .2s; }
+    .topbar-item:hover { color: var(--white); }
+
+    /* ── NAVBAR ────────────────────────────────────────────── */
+    .navbar { background: var(--red); position: relative; z-index: 200; box-shadow: 0 4px 16px rgba(0,0,0,.25); }
+    .navbar .container { display: flex; align-items: center; justify-content: space-between; height: 88px; gap: 16px; }
+    .navbar-logo img { height: 54px; width: auto; }
+    .navbar-nav { display: flex; align-items: center; gap: 2px; list-style: none; }
+    .navbar-nav a { color: var(--white); text-decoration: none; font-size: 1rem; font-weight: 500; padding: 7px 14px; border-radius: var(--r-sm); transition: all .2s; }
+    .navbar-nav a:hover { color: rgba(255,255,255,.45); background: transparent; }
+    .navbar-phone { color: var(--white); text-decoration: none; font-family: 'AmsiPro', sans-serif; font-weight: 900; font-size: 1.5rem; letter-spacing: .5px; transition: opacity .2s; margin-top: -8px; }
+    .navbar-phone:hover { opacity: .8; color: var(--white); }
+    .navbar-mobile-actions { display: flex; align-items: center; gap: 10px; }
+    .navbar-whatsapp { display: none; align-items: center; justify-content: center; gap: 7px; height: 44px; padding: 0 14px; border-radius: 50%; background: #25D366; flex-shrink: 0; color: #fff; font-family: 'AmsiPro', sans-serif; font-weight: 700; font-size: .85rem; text-decoration: none; white-space: nowrap; }
+    .navbar-burger { display: none; align-items: center; justify-content: center; width: 40px; height: 40px; background: none; border: none; cursor: pointer; flex-shrink: 0; }
+    .navbar-nav.mobile-open {
+      display: flex; flex-direction: column; align-items: stretch;
+      position: absolute; top: 100%; left: 0; right: 0;
+      background: #c4001a; padding: 14px 20px 26px; gap: 6px;
+      box-shadow: 0 8px 16px rgba(0,0,0,.2);
+    }
+    .navbar-nav.mobile-open li { width: 100%; }
+    .navbar-nav.mobile-open a { display: block; padding: 18px 14px; text-align: center; font-size: 1.15rem; }
+
+    /* ── HERO ──────────────────────────────────────────────── */
+    .hero { background: #F4F4F7; position: relative; overflow: hidden; display: flex; flex-direction: column; }
+
+    /* Blob decorativos */
+    .hero::before {
+      content: '';
+      position: absolute; top: -120px; right: -80px;
+      width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(212,43,43,.22) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; bottom: -60px; left: -60px;
+      width: 400px; height: 400px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Vídeo */
+    .hero-video { position: relative; width: 100%; }
+    .hero-video iframe { display: block; width: 100%; height: clamp(520px, 70vw, 600px); border: none; }
+
+    /* Hero body */
+    .hero-body { padding: 56px 0; position: relative; z-index: 1; flex: 1; display: flex; align-items: center; }
+    .hero-body .container { display: flex; flex-direction: column; align-items: center; text-align: center; }
+
+    .hero-copy .eyebrow--light { margin-bottom: 16px; }
+    .hero-copy h1 { font-family: 'AmsiPro', sans-serif; font-weight: 900; font-size: clamp(3.2rem, 6vw, 5.2rem); line-height: .96; color: var(--navy); margin-bottom: 22px; }
+    .hero-copy h1 strong { color: var(--red); display: block; }
+    .hero-copy p { color: var(--muted); font-size: 1rem; line-height: 1.8; margin-bottom: 36px; font-weight: 300; }
+    .hero-sub { font-family: 'Roboto', sans-serif; font-size: 1.06rem; font-weight: 400; color: var(--muted); line-height: 1.65; margin-bottom: 36px; max-width: 900px; text-align: center; }
+    .hero-btns { justify-content: center; }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* Hero feature cards */
+    .hero-features { display: flex; flex-direction: column; gap: 14px; }
+    .hero-feat {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+      padding: 20px 22px;
+      display: flex; align-items: center; gap: 18px;
+      transition: background .25s, border-color .25s, box-shadow .25s;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    }
+    .hero-feat:hover { box-shadow: 0 6px 24px rgba(0,0,0,.1); transform: translateY(-2px); }
+    .hero-feat-icon {
+      width: 48px; height: 48px; border-radius: var(--r-sm);
+      background: var(--red); display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .hero-feat-icon.navy { background: var(--navy); }
+    .hero-feat h3 { font-family: 'AmsiPro', sans-serif; font-weight: 700; font-size: 1.05rem; color: var(--navy); margin-bottom: 3px; }
+    .hero-feat p { font-size: .82rem; color: var(--muted); line-height: 1.5; }
+
+    /* ── RIBBON ────────────────────────────────────────────── */
+    .ribbon { background: var(--red); overflow: hidden; padding: 0; }
+    .ribbon-track {
+      display: flex; align-items: stretch;
+      width: max-content;
+      will-change: transform;
+    }
+    .ribbon-set {
+      display: flex; align-items: center;
+      flex-shrink: 0;
+    }
+    .ribbon-item {
+      display: flex; align-items: center; gap: 10px;
+      color: var(--white); font-family: 'AmsiPro', sans-serif;
+      font-weight: 900; font-size: 1.25rem; letter-spacing: 2px;
+      text-transform: uppercase; padding: 18px 40px;
+      border-right: 1px solid rgba(255,255,255,.2);
+    }
+    .ribbon-item svg { margin-top: 2%; }
+    .ribbon-dot { display: none; }
+
+    /* ── PITCH ─────────────────────────────────────────────── */
+    .pitch { padding: 56px 0; background: var(--white); }
+    .pitch .container { display: grid; grid-template-columns: 1fr auto 1fr; gap: 56px; align-items: center; }
+    .pitch-delivery { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 16px; text-align: left; margin-left: 30%; }
+    .pitch-delivery img { width: 90px; height: auto; margin-top: -2%; }
+    .pitch-delivery span { font-family: 'AmsiPro', sans-serif; font-weight: 900; font-size: 2.2rem; color: var(--navy); line-height: 1.1; margin-top: -4%; }
+
+    .pitch-preheadline { font-family: 'AmsiPro', sans-serif !important; font-weight: 900 !important; font-size: 3.06rem !important; color: var(--navy) !important; line-height: 1 !important; margin-bottom: 4px; padding-top: 24px; }
+    .pitch-big { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; }
+    .pitch-highlight { font-family: 'AmsiPro', sans-serif; font-weight: 900; font-size: clamp(3rem, 6vw, 4.8rem); color: var(--red); line-height: 1; }
+    .pitch-aside { font-family: 'AmsiPro', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--navy); line-height: 1.2; margin-top: 8px; }
+    .pitch-copy { margin-top: -5%; }
+    .pitch-copy .eyebrow { margin-bottom: 14px; }
+    .pitch-copy .section-title { color: var(--navy); margin-bottom: 20px; }
+    .pitch-copy p { font-family: 'Roboto', sans-serif; color: var(--muted); font-size: 1.06rem; line-height: 1.65; margin-bottom: 14px; font-weight: 400; }
+    .pitch-copy .btn { margin-top: 10px; }
+
+    .pitch-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; border-radius: var(--r-sm); overflow: hidden; }
+    .stat-tile { padding: 34px 28px; display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; border-radius: var(--r-sm); }
+    .stat-tile:nth-child(1) { background: #F4F4F7; }
+    .stat-tile:nth-child(2) { background: var(--p-sage); }
+    .stat-tile:nth-child(3) { background: var(--p-lavender); }
+    .stat-tile:nth-child(4) { background: var(--p-butter); }
+    .stat-num { font-family: 'AmsiPro', sans-serif; font-weight: 900; font-size: 2.8rem; line-height: 1; color: var(--navy); }
+    .stat-tile:nth-child(1) .stat-num { color: var(--p-peach-ink); }
+    .stat-tile:nth-child(2) .stat-num { color: var(--p-sage-ink); }
+    .stat-tile:nth-child(3) .stat-num { color: var(--p-lavender-ink); }
+    .stat-tile:nth-child(4) .stat-num { color: var(--p-butter-ink); }
+    .stat-label { font-size: .75rem; font-weight: 500; letter-spacing: .6px; text-transform: uppercase; color: var(--muted); }
+
+    /* ── PAINT CAN ─────────────────────────────────────────── */
+    .paintcan { padding: 56px 0; margin-top: 0; background: var(--white); display: flex; align-items: center; justify-content: center; }
+    .paintcan-wrap { position: relative; width: 700px; height: 700px; flex-shrink: 0; margin-left: 3%; margin-top: -10%; }
+    .paintcan-img { width: 100%; height: 100%; object-fit: contain; display: block; }
+    .paintcan-inner { position: absolute; top: 45.5%; left: 47.5%; transform: translate(-50%, -50%); width: 480px; text-align: center; color: var(--white); }
+    .paintcan-inner p { font-family: 'AmsiPro', sans-serif; font-size: 1.7rem; font-weight: 600; margin-bottom: 20px; opacity: .95; line-height: 1.1; }
+    .paintcan-inner a { display: flex; align-items: center; justify-content: center; gap: 12px; color: var(--white); text-decoration: none; font-family: 'AmsiPro', sans-serif; font-weight: 900; font-size: 2.6rem; letter-spacing: .5px; margin-bottom: 10px; transition: opacity .2s; line-height: 1; }
+    .paintcan-inner a svg { width: 36px; height: 36px; flex-shrink: 0; align-self: center; }
+    .paintcan-inner a:hover { opacity: .8; }
+    .paintcan-inner .paintcan-footer { font-family: 'AmsiPro', sans-serif; font-weight: 600; font-size: 1.7rem; opacity: .9; margin-top: 20px; line-height: 1.1; }
+
+    /* ── AUDIENCE ──────────────────────────────────────────── */
+    .audience { padding: 56px 0; background: #F4F4F7; scroll-margin-top: 20px; }
+    .audience-head { text-align: center; margin-bottom: 48px; }
+    .audience-head .eyebrow { justify-content: center; margin-bottom: 14px; }
+    .audience-head .section-title { color: var(--navy); margin-bottom: 10px; }
+    .audience-head p { font-family: 'Roboto', sans-serif; color: var(--muted); font-size: 1.06rem; line-height: 1.65; font-weight: 400; }
+
+    .aud-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; margin-bottom: 0; }
+
+    .aud-card {
+      background: var(--white);
+      border-radius: var(--r-sm);
+      border: none;
+      padding: 40px 40px 52px;
+      display: flex; flex-direction: column;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .aud-card--navy { }
+    .aud-card--red  { }
+    .aud-card:hover { box-shadow: none; }
+
+    .aud-tag { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; font-family: 'AmsiPro', sans-serif; font-size: 2.4rem; font-weight: 900; letter-spacing: normal; text-transform: uppercase; margin-bottom: 10px; line-height: 1; }
+    .aud-tag svg { margin-top: 4px; }
+    .aud-tag img { margin-top: 4px; }
+    .aud-card { text-align: center; }
+    .aud-tag--navy { color: var(--red); }
+    .aud-tag--red  { color: var(--red); }
+    .aud-tag svg { flex-shrink: 0; width: 26px; height: 26px; }
+
+    .aud-card h2 { font-family: 'AmsiPro', sans-serif; font-weight: 600; font-size: 1.8rem; color: var(--dark); line-height: 1.1; margin-bottom: 12px; }
+    .aud-card > p { color: var(--muted); font-size: 1.05rem; line-height: 1.65; font-weight: 400; margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+
+    .aud-body { flex: 1; display: flex; flex-direction: column; }
+    .aud-body > a.btn { min-width: 0; white-space: normal; text-align: center; height: auto; min-height: 50px; padding-top: 12px; padding-bottom: 16px; width: 100% !important; }
+
+    .benefit-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; flex: 1; }
+    .benefit-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 1.05rem; font-weight: 500; color: var(--dark); line-height: 1.55; }
+    .bicon { width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; background: transparent; }
+    .bicon--navy { border: 2px solid #1AAD5E; color: #1AAD5E; }
+    .bicon--red  { border: 2px solid #1AAD5E; color: #1AAD5E; }
+
+    .seal-strip { display: flex; align-items: center; justify-content: center; gap: 24px; background: var(--white); border-radius: var(--r-sm); padding: 22px 32px; margin-bottom: 40px; box-shadow: 0 2px 12px rgba(0,0,0,.07); }
+    .seal-strip img { height: 90px; width: auto; flex-shrink: 0; }
+    .seal-strip p { font-size: 1.05rem; color: var(--dark); line-height: 1.5; font-weight: 500; max-width: 340px; }
+
+    /* ── BRANDS ────────────────────────────────────────────── */
+    .brands { padding: 56px 0; background: var(--navy); position: relative; overflow: hidden; }
+    .brands::before {
+      content: '';
+      position: absolute; top: -100px; right: -100px;
+      width: 500px; height: 500px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(212,43,43,.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .brands .container { position: relative; z-index: 1; }
+    .brands-head { margin-bottom: 52px; text-align: center; }
+    .brands-head .eyebrow--light { margin-bottom: 12px; }
+    .brands-head .section-title { color: var(--white); }
+
+    .anjo-card {
+      background: var(--red);
+      border-radius: var(--r-sm);
+      padding: 28px 24px;
+      min-height: 100px;
+      display: flex; align-items: center; justify-content: center; gap: 48px;
+      margin-bottom: 12px;
+    }
+    .anjo-card-text { font-family: 'Roboto', sans-serif; font-size: 1.1rem; font-weight: 400; color: rgba(255,255,255,.92); line-height: 1.5; }
+    .anjo-card-logo { height: 60px; width: auto; flex-shrink: 0; }
+
+    .brands-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .brand-chip {
+      background: var(--white);
+      border-radius: var(--r-sm);
+      padding: 28px 24px;
+      display: flex; align-items: center; justify-content: center;
+      min-height: 100px;
+      transition: all .2s;
+    }
+    .brand-chip img { max-height: 60px; width: auto; max-width: 70%; object-fit: contain; }
+    .brand-chip object { max-height: 96px; width: auto; max-width: 100%; }
+    .brand-chip:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,.12); }
+    .brands-toggle { display: none; }
+
+    /* ── PRODUCTS ──────────────────────────────────────────── */
+    .products { padding: 56px 0; background: var(--white); }
+    .products .section-title { color: var(--navy); margin-bottom: 16px; }
+    .products > .container > p { font-family: 'Roboto', sans-serif; color: var(--muted); font-size: 1.06rem; line-height: 1.65; margin-bottom: 48px; font-weight: 400; }
+    .accordion { display: flex; flex-direction: column; gap: 12px; }
+    .accordion details { border: 1px solid var(--border); border-radius: var(--r-sm); overflow: hidden; transition: box-shadow .2s; }
+    .accordion details[open] { box-shadow: 0 4px 24px rgba(0,0,0,.08); }
+    .accordion summary {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 24px 32px; cursor: pointer; list-style: none;
+      font-family: 'AmsiPro', sans-serif; font-weight: 700; font-size: 1.69rem;
+      color: var(--navy); background: var(--white); user-select: none;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .accordion details:not([open]) summary:hover { transform: translateX(6px); background: #fafafa; }
+    .accordion details:not([open]):hover { box-shadow: inset 4px 0 0 var(--red); }
+    .accordion details[open] { box-shadow: 0 4px 24px rgba(0,0,0,.08), inset 4px 0 0 var(--red); }
+    .accordion summary::-webkit-details-marker { display: none; }
+    .accordion summary .acc-icon { width: 22px; height: 22px; flex-shrink: 0; color: var(--red); transition: transform .25s; }
+    .accordion details[open] summary .acc-icon { transform: rotate(45deg); }
+    .accordion details[open] summary { color: var(--red); font-size: 1.85rem; }
+    .accordion summary .acc-left { display: flex; align-items: center; gap: 28px; }
+    .accordion summary .acc-emoji { font-size: 1.68rem; width: 32px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .accordion .acc-body { padding: 0 32px 28px; font-family: 'Roboto', sans-serif; font-size: 1rem; color: var(--muted); line-height: 1.7; border-top: 1px solid var(--border); padding-top: 20px; }
+    .acc-tags { display: flex; flex-direction: column; margin-top: 14px; }
+    .acc-tag { font-size: 1rem; font-weight: 500; color: var(--red); padding: 11px 4px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+    .acc-tag::before { content: none; }
+    .acc-tag:last-child { border-bottom: none; }
+    .acc-tag--more { color: var(--muted); font-weight: 400; font-style: italic; }
+    .acc-tag--more::before { color: var(--muted); }
+
+    /* ── VIDEO THUMB ───────────────────────────────────────── */
+    /* Oculto até o vídeo institucional ser gravado. Remover "display: none" para reativar. */
+    /* Oculto até o vídeo institucional ser gravado. Remover "display: none" para reativar. */
+    .video-thumb { display: none; position: relative; width: 100%; max-height: 480px; overflow: hidden; cursor: pointer; }
+    .video-thumb img { width: 100%; max-height: 480px; object-fit: cover; display: block; filter: brightness(.6); transition: filter .3s; }
+    .video-thumb:hover img { filter: brightness(.5); }
+    .play-overlay-wrap {
+      position: absolute; inset: 0;
+      display: flex; align-items: center;
+      width: 100%; max-width: 1160px; left: 50%; transform: translateX(-50%);
+      padding: 0 32px;
+      pointer-events: none;
+    }
+    .play-overlay {
+      display: flex; align-items: center; gap: 20px;
+    }
+    .play-btn {
+      width: 80px; height: 80px; border-radius: 50%; flex-shrink: 0;
+      background: transparent; border: 2.5px solid #fff;
+      display: flex; align-items: center; justify-content: center;
+      transition: transform .25s, background .25s, border-color .25s;
+    }
+    .video-thumb:hover .play-btn { transform: scale(1.1); background: #fff; border-color: #fff; }
+    .play-btn svg { width: 32px; height: 32px; color: var(--red); margin-left: 4px; }
+    .play-label { font-family: 'AmsiPro', sans-serif; font-weight: 700; font-size: 1.4rem; color: #fff; letter-spacing: .5px; text-shadow: 0 2px 8px rgba(0,0,0,.4); line-height: 1.2; }
+
+    /* Modal do vídeo institucional */
+    .video-modal { display: none; position: fixed; inset: 0; z-index: 9999; align-items: center; justify-content: center; }
+    .video-modal.open { display: flex; }
+    .video-modal-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,.85); }
+    .video-modal-box { position: relative; width: 90%; max-width: 960px; aspect-ratio: 16/9; z-index: 1; }
+    .video-modal-frame { width: 100%; height: 100%; }
+    .video-modal-frame iframe { width: 100%; height: 100%; border: none; border-radius: var(--r-sm); }
+    .video-modal-close { position: absolute; top: -40px; right: 0; background: none; border: none; color: #fff; font-size: 2.2rem; line-height: 1; cursor: pointer; }
+
+    /* ── TERRITORY ─────────────────────────────────────────── */
+    .territory { padding: 56px 0; background: linear-gradient(140deg, #EEF6FF 0%, #F8FFFE 100%); }
+    .territory .container { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+    .territory-copy .eyebrow { margin-bottom: 14px; }
+    .territory-copy .section-title { color: var(--navy); margin-bottom: 20px; }
+    .territory-copy p { font-family: 'Roboto', sans-serif; color: var(--muted); font-size: 1.06rem; line-height: 1.65; margin-bottom: 20px; font-weight: 400; }
+
+    .neigh-grid { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 30px; }
+    .neigh-chip { font-size: .8rem; font-weight: 600; padding: 6px 16px; border-radius: 100px; transition: all .2s; background: transparent; border: 1px solid var(--navy); color: var(--navy); cursor: default; }
+    .neigh-chip:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,.1); }
+
+    .map-wrap { border-radius: var(--r-sm); overflow: hidden; box-shadow: 0 4px 32px rgba(0,0,0,.1); }
+    .map-wrap iframe { display: block; width: 100%; height: 420px; border: none; }
+
+    /* ── CTA ───────────────────────────────────────────────── */
+    .cta-section { padding: 56px 0; background: var(--navy); position: relative; overflow: hidden; }
+    .cta-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 80% 50%, rgba(212,43,43,.2) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .cta-section .container { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+
+    .cta-copy .eyebrow--light { margin-bottom: 16px; }
+    .cta-copy .section-title { color: var(--white); margin-bottom: 14px; }
+    .cta-copy p { font-family: 'Roboto', sans-serif; color: rgba(255,255,255,.65); font-size: 1.06rem; line-height: 1.65; font-weight: 400; }
+
+    .contact-stack { display: flex; flex-direction: column; gap: 12px; }
+    .contact-tile {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.11);
+      border-radius: var(--r-sm);
+      padding: 18px 22px;
+      display: flex; align-items: center; gap: 16px;
+      color: var(--white); text-decoration: none;
+      transition: all .2s;
+    }
+    .contact-tile:hover { background: rgba(255,255,255,.14); transform: translateX(5px); }
+    .ct-icon { width: 42px; height: 42px; border-radius: var(--r-sm); background: rgba(255,255,255,.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .ct-label { font-size: .72rem; color: rgba(255,255,255,.45); letter-spacing: .8px; text-transform: uppercase; font-weight: 500; }
+    .ct-val { font-family: 'AmsiPro', sans-serif; font-weight: 700; font-size: 1.35rem; }
+    .ct-arrow { margin-left: auto; opacity: .3; }
+    .cta-note { margin-top: 36px; font-size: 1.2rem; font-weight: 700; color: #ffffff; display: flex; align-items: center; gap: 7px; }
+
+    /* ── FOOTER ────────────────────────────────────────────── */
+    footer { background: var(--dark); padding: 56px 0 28px; }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.06); margin-bottom: 28px; }
+    .footer-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+    .footer-brand img { height: 38px; width: auto; margin-bottom: 18px; filter: brightness(0) invert(1); }
+    .footer-brand p { color: rgba(255,255,255,.38); font-size: .85rem; line-height: 1.75; margin-bottom: 22px; font-weight: 300; }
+    .socials { display: flex; gap: 8px; }
+    .soc-btn { width: 52px; height: 52px; border-radius: var(--r-sm); background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.15); display: flex; align-items: center; justify-content: center; color: var(--white); text-decoration: none; transition: all .2s; }
+    .soc-btn svg { width: 24px; height: 24px; }
+    .soc-btn:hover { background: var(--red); color: var(--white); border-color: var(--red); }
+    .footer-col h4 { font-family: 'AmsiPro', sans-serif; font-weight: 700; font-size: .72rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 18px; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links li a, .footer-links li span { color: rgba(255,255,255,.45); font-size: .87rem; text-decoration: none; font-weight: 300; line-height: 1.5; transition: color .2s; }
+    .footer-links li a:hover { color: var(--white); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-bottom p, .footer-bottom a { color: rgba(255,255,255,.22); font-size: .78rem; text-decoration: none; }
+    .footer-bottom a:hover { color: rgba(255,255,255,.5); }
+
+    /* ── WPP FAB ───────────────────────────────────────────── */
+    @keyframes wpp-pulse { 0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,.4), 0 0 0 0 rgba(37,211,102,.35); } 50% { box-shadow: 0 4px 20px rgba(37,211,102,.4), 0 0 0 14px rgba(37,211,102,0); } }
+    .wpp-fab { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 98px; height: 98px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,.4); text-decoration: none; transition: transform .2s, box-shadow .2s, opacity .3s; animation: wpp-pulse 2.2s ease-in-out infinite; }
+    .wpp-fab:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,.55); animation: none; }
+    .wpp-fab svg { width: 45px; height: 45px; }
+
+    /* ── GALLERY ──────────────────────────────────────────── */
+    .gallery-section { padding: 56px 0 0; background: var(--white); overflow: hidden; }
+    .gallery-track-wrap { overflow-x: scroll; scroll-behavior: auto; cursor: grab; scrollbar-width: none; -ms-overflow-style: none; }
+    .gallery-track-wrap::-webkit-scrollbar { display: none; }
+    .gallery-track-wrap.dragging { cursor: grabbing; }
+    .gallery-track { display: flex; gap: 16px; width: max-content; }
+    .gallery-slide { flex-shrink: 0; width: 260px; height: 380px; border-radius: var(--r-md); overflow: hidden; }
+    .gallery-slide img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
+    .gallery-slide:hover img { transform: scale(1.05); }
+
+    /* ── RESPONSIVE ────────────────────────────────────────── */
+    @media (max-width: 960px) {
+      .hero-body .container, .pitch .container, .territory .container,
+      .cta-section .container, .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+      .aud-grid { grid-template-columns: 1fr; }
+      .brands-grid { grid-template-columns: repeat(2, 1fr); }
+      .navbar-nav { display: none; }
+    }
+    @media (max-width: 600px) {
+      .navbar .container { height: auto; padding: 20px 20px; }
+      .navbar-logo img { height: 46px; }
+      .navbar-phone { font-size: 1.15rem; white-space: nowrap; margin-top: 0; }
+      .navbar-phone svg { width: 18px; height: 18px; margin-right: 4px; }
+      .navbar-phone { display: none; }
+      .navbar-burger { display: flex; }
+      .mobile-break { display: block; }
+      .hero-video img { height: auto !important; object-fit: contain; object-position: center; }
+      .btn-whatsapp { justify-content: center; width: 100%; box-sizing: border-box; }
+      .paintcan { padding: 32px 0; }
+      .paintcan-wrap { width: 100%; max-width: 560px; height: auto; aspect-ratio: 1/1; margin-left: 0; margin-top: 0; }
+      .paintcan-img { transform: scale(1.46) translateX(3%); }
+      .paintcan-inner { width: 72%; transform: translate(-46%, -50%); }
+      .paintcan-inner p { font-size: 1.6rem; margin-bottom: 18px; }
+      .paintcan-inner a { font-size: 2.1rem; gap: 12px; margin-bottom: 8px; }
+      .paintcan-inner a svg { width: 30px; height: 30px; }
+      .paintcan-inner .paintcan-footer { font-size: 1.5rem; margin-top: 16px; }
+      .territory-copy { text-align: center; }
+      .neigh-grid { justify-content: center; }
+      .territory-copy .btn { display: inline-flex; }
+      .cta-copy { text-align: center; }
+      .cta-note { display: block; text-align: center; }
+      .contact-tile { justify-content: center; }
+      .contact-tile > div:not(.ct-icon) { min-width: 168px; text-align: center; }
+      .ct-arrow { display: none; }
+      .cta-note svg { display: inline-block; vertical-align: middle; margin-right: 6px; }
+      .cta-note span { text-align: center; }
+      .hero-btns { flex-direction: column; }
+      .pitch-copy { text-align: center; }
+      .pitch-big { justify-content: center; }
+      .pitch-copy .btn { display: flex; justify-content: center; }
+      .pitch-delivery { margin-left: 0; justify-content: center; }
+      .pitch-grid { grid-template-columns: 1fr 1fr; }
+      .stat-tile { align-items: center; text-align: center; }
+      .pitch-cores { justify-content: center !important; }
+      .brands-grid { grid-template-columns: 1fr 1fr; }
+      .brand-chip img:not([alt="Lotus"]) { transform: scale(1.2); }
+      .anjo-card { flex-direction: column; text-align: center; gap: 18px; }
+      .brand-extra { display: none; }
+      .brand-extra.show { display: flex; }
+      .brands-grid-wrap { position: relative; max-height: 640px; overflow: hidden; }
+      .brands-grid-wrap::after {
+        content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 70px;
+        background: linear-gradient(to bottom, transparent, var(--navy) 80%);
+        pointer-events: none;
+      }
+      .brands-grid-wrap.expanded { max-height: none; overflow: visible; }
+      .brands-grid-wrap.expanded::after { display: none; }
+      .brands-toggle {
+        display: flex; flex-direction: column; align-items: center; gap: 10px;
+        width: 100%; margin: 18px auto 0; padding: 0;
+        background: none; border: none; cursor: pointer;
+        font-family: 'AmsiPro', sans-serif; font-weight: 700; font-size: 1.3rem; color: #fff;
+        line-height: 1.25;
+      }
+      .brands-toggle svg { transition: transform .3s; }
+      .brands-toggle.expanded { display: none; }
+      @keyframes brands-toggle-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
+      .brands-toggle { animation: brands-toggle-float 2s ease-in-out infinite; }
+      .pitch-grid { grid-template-columns: 1fr 1fr; }
+      .aud-top, .aud-body { padding: 26px 22px; }
+      .benefit-list li { flex-direction: column; align-items: center; text-align: center; gap: 6px; }
+      .products > .container > h2, .products > .container > p { text-align: center; }
+      .hero-body { padding: 28px 0 52px; }
+      .container { padding: 0 20px; }
+    }
+  </style>
+</head>
+<body>
+
+
+<!-- ══ NAVBAR ════════════════════════════════════════════════ -->
+<nav class="navbar">
+  <div class="container">
+    <a href="#" class="navbar-logo">
+      <img src="assets/Assinatura-horizontal.svg" alt="Pizzoni Tintas" />
+    </a>
+    <ul class="navbar-nav">
+      <li><a href="#audience">Benefícios para você</a></li>
+      <li><a href="#produtos">Produtos</a></li>
+      <li><a href="#marcas">Marcas</a></li>
+      <li><a href="#regiao">Criciúma e região</a></li>
+    </ul>
+    <a href="tel:4834387112" class="navbar-phone"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px;margin-bottom:2px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3-8.63A2 2 0 0 1 3.62 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17.17z"/></svg>48 3438-7112</a>
+    <div class="navbar-mobile-actions">
+      <a href="https://wa.me/5548996280136?text=Olá!%20Vim%20pelo%20site%20e%20preciso%20de%20ajuda." class="navbar-whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span>WhatsApp</span>
+      </a>
+      <button class="navbar-burger" id="navbarBurger" aria-label="Abrir menu">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ HERO ══════════════════════════════════════════════════ -->
+<section class="hero">
+
+  <div class="hero-video">
+    <picture>
+      <source media="(max-width: 600px)" srcset="assets/Capa-hero-mobile.png">
+      <img src="assets/Capa-hero.png" alt="Pizzoni Tintas" width="1901" height="541" style="width:100%;height:auto;display:block;" />
+    </picture>
+  </div>
+
+  <div class="hero-body">
+    <div class="container">
+      <div class="hero-copy">
+        <h1>
+          Economize na<span class="mobile-break"> </span>sua pintura<br>
+          <strong>com vantagens<span class="mobile-break"> </span>de verdade</strong>
+        </h1>
+        <p class="hero-sub" style="font-family:'Roboto',sans-serif;font-family:'AmsiPro',sans-serif;font-weight:600;font-style:normal;font-size:1.8rem;line-height:1.1;color:#111827;text-align:center;width:100%;margin-left:auto;margin-right:auto;">A oportunidade que você estava procurando para deixar sua<span class="mobile-break"> </span>casa de cara nova.</p>
+        <div class="hero-btns" id="heroBtnsSentinel" style="justify-content:center;">
+          <a href="https://wa.me/5548996280136?text=Olá!%20Vim%20pelo%20site%20e%20preciso%20de%20ajuda." class="btn btn-whatsapp" id="heroWhatsBtn" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            Chame no WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ RIBBON ════════════════════════════════════════════════ -->
+<div class="ribbon">
+  <div class="ribbon-track">
+    <div class="ribbon-set">
+      <span class="ribbon-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Loja Conceito Anjo Tintas</span>
+      <span class="ribbon-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>+5 mil cores</span>
+      <span class="ribbon-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Entrega para toda a região</span>
+      <span class="ribbon-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>10x sem juros no cartão</span>
+      <span class="ribbon-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Cashback para pintores</span>
+      <span class="ribbon-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Visita técnica à obra</span>
+    </div>
+    <div class="ribbon-set">
+      <span class="ribbon-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Loja Conceito Anjo Tintas</span>
+      <span class="ribbon-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>+5 mil cores</span>
+      <span class="ribbon-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Entrega para toda a região</span>
+      <span class="ribbon-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>10x sem juros no cartão</span>
+      <span class="ribbon-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Cashback para pintores</span>
+      <span class="ribbon-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Visita técnica à obra</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PITCH ══════════════════════════════════════════════════ -->
+<section class="pitch">
+  <div class="container">
+    <div class="pitch-copy">
+      <p class="pitch-preheadline">Excelentes preços</p>
+      <div class="pitch-big">
+        <span class="pitch-highlight">EM ATÉ 10X</span>
+        <span class="pitch-aside">sem Juros<br>no cartão</span>
+      </div>
+      <a href="https://wa.me/5548996280136?text=Olá!%20Desejo%20saber%20mais%20sobre%20condições%20e%20orçamento.%20Vim%20pelo%20site." class="btn btn-red" target="_blank" rel="noopener">
+        Fale com um consultor
+      </a>
+    </div>
+
+    <div class="pitch-delivery">
+      <img src="assets/Ícone-entrega-rápida.svg" alt="Entrega rápida" />
+      <span>Entrega<br>rápida</span>
+    </div>
+
+    <div class="pitch-cores" style="display:flex;align-items:center;justify-content:flex-end;">
+      <img src="assets/Selo-5mil-cores.svg" alt="+5 mil cores" style="height:233px;width:auto;" />
+    </div>
+  </div>
+</section>
+
+<!-- ══ PAINT CAN ═════════════════════════════════════════════ -->
+<section class="paintcan">
+  <div class="paintcan-wrap">
+    <img src="assets/Lata.png" alt="Lata de tinta Pizzoni" width="1254" height="1254" class="paintcan-img" />
+
+    <!-- Conteúdo interno (sobre a lata) -->
+    <div class="paintcan-inner">
+      <p>Solicite seu orçamento<br>agora mesmo</p>
+      <a href="tel:4834387112">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3-8.63A2 2 0 0 1 3.62 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17.17z"/></svg>
+        48 3438-7112
+      </a>
+      <a href="https://wa.me/5548996280136?text=Olá!%20Desejo%20um%20orçamento.%20Vim%20pelo%20site." target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        48 99628-0136
+      </a>
+      <p class="paintcan-footer">Atendemos Criciúma<br>e toda a região</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ AUDIENCE ══════════════════════════════════════════════ -->
+<section class="audience" id="audience">
+  <div class="container">
+    <div class="audience-head">
+      <h2 class="section-title">Para quem compra<span class="mobile-break"> </span>e para quem pinta</h2>
+      <p>Seja você proprietário reformando<span class="mobile-break"> </span>ou pintor profissional. O Pizzoni Tintas<span class="mobile-break"> </span>tem condições feitas para você.</p>
+    </div>
+
+    <div class="aud-grid" id="aud-cards">
+
+      <!-- Cliente final -->
+      <div class="aud-card aud-card--navy">
+        <div class="aud-tag aud-tag--navy">
+          <img src="assets/Ícone-cliente-final.png" alt="Cliente Final" style="height:65px;width:auto;">
+          Cliente final
+        </div>
+        <h2>Renove seu espaço com economia e praticidade</h2>
+        <p>Tudo que você precisa para uma pintura impecável, do planejamento à entrega.</p>
+        <div class="aud-body">
+          <ul class="benefit-list">
+            <li><div class="bicon bicon--navy"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>Excelentes preços e negociação flexível</li>
+            <li><div class="bicon bicon--navy"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>Até 10x sem juros no cartão</li>
+            <li><div class="bicon bicon--navy"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>Atendimento personalizado com consultoria de cor</li>
+            <li><div class="bicon bicon--navy"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span>Produtos de qualidade<span class="mobile-break"> </span>das melhores marcas</span></li>
+            <li><div class="bicon bicon--navy"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>Simulador de ambientes virtual</li>
+            <li><div class="bicon bicon--navy"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>Entrega rápida na sua região</li>
+            <li><div class="bicon bicon--navy"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>Visita técnica à obra</li>
+          </ul>
+          <a href="https://wa.me/5548996280136?text=Olá!%20Sou%20cliente%20final%20e%20desejo%20um%20orçamento.%20Vim%20pelo%20site." class="btn btn-outline-navy" target="_blank" rel="noopener" style="width:80%;justify-content:center;align-self:center;">
+            Solicitar orçamento personalizado
+          </a>
+        </div>
+      </div>
+
+      <!-- Pintor profissional -->
+      <div class="aud-card aud-card--red">
+        <div class="aud-tag aud-tag--red">
+          <img src="assets/Ícone-profissional-pintura.png" alt="Profissional da Pintura" style="height:65px;width:auto;">
+          Profissional da pintura
+        </div>
+        <h2>Venha ser nosso parceiro</h2>
+        <p>Vantagens incríveis para quem vive da pintura e precisa de um fornecedor de confiança.</p>
+        <div class="aud-body">
+          <ul class="benefit-list">
+            <li><div class="bicon bicon--red"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span>Programa de cashback<span class="mobile-break"> </span>para indicações</span></li>
+            <li><div class="bicon bicon--red"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span>Atendimento prioritário<span class="mobile-break"> </span>e exclusivo</span></li>
+            <li><div class="bicon bicon--red"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span>Condições comerciais especiais por volume</span></li>
+            <li><div class="bicon bicon--red"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span>Entrega rápida para<span class="mobile-break"> </span>toda a região</span></li>
+            <li><div class="bicon bicon--red"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span>Brindes e bonificações<span class="mobile-break"> </span>por parceria</span></li>
+          </ul>
+          <a href="https://wa.me/5548996280136?text=Olá!%20Sou%20profissional%20da%20pintura%20e%20desejo%20conhecer%20o%20programa%20de%20parceiros.%20Vim%20pelo%20site." class="btn btn-outline-red" target="_blank" rel="noopener" style="width:80%;justify-content:center;align-self:center;">
+            Quero ser parceiro Pizzoni
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ GALERIA ════════════════════════════════════════════════ -->
+<section class="gallery-section">
+  <div class="gallery-track-wrap">
+    <div class="gallery-track">
+      <div class="gallery-slide"><img src="assets/Imgs-loja/fachada-2.png" alt="Pizzoni Tintas" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7976.jpg" alt="Pizzoni Tintas" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7978.jpg" alt="Pizzoni Tintas" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7981.jpg" alt="Pizzoni Tintas" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7983.jpg" alt="Pizzoni Tintas" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7988-2.png" alt="Pizzoni Tintas" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7991.jpg" alt="Pizzoni Tintas" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7993.jpg" alt="Pizzoni Tintas" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7994.jpg" alt="Pizzoni Tintas" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7995.jpg" alt="Pizzoni Tintas" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/05.png" alt="Pizzoni Tintas" /></div>
+      <!-- duplicadas para loop infinito -->
+      <div class="gallery-slide"><img src="assets/Imgs-loja/fachada-2.png" alt="Pizzoni Tintas" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7976.jpg" alt="Pizzoni Tintas" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7978.jpg" alt="Pizzoni Tintas" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7981.jpg" alt="Pizzoni Tintas" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7983.jpg" alt="Pizzoni Tintas" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7988-2.png" alt="Pizzoni Tintas" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7991.jpg" alt="Pizzoni Tintas" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7993.jpg" alt="Pizzoni Tintas" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7994.jpg" alt="Pizzoni Tintas" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7995.jpg" alt="Pizzoni Tintas" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/05.png" alt="Pizzoni Tintas" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BRANDS ════════════════════════════════════════════════ -->
+<section class="products" id="produtos">
+  <div class="container">
+    <h2 class="section-title">O que você encontra aqui</h2>
+    <p>Desde tintas imobiliárias até ferramentas profissionais. Tudo que sua obra precisa<span class="mobile-break"> </span>em um só lugar.</p>
+    <div class="accordion">
+
+      <details>
+        <summary>
+          <span class="acc-left"><span class="acc-emoji"><img src="assets/Icones/ícone-loja-conceito-anjo.png" alt="Loja Conceito Anjo" style="height:25px;width:auto;position:relative;top:3px;"></span><span class="acc-title">Loja Conceito<span class="mobile-break"> </span>Anjo Store</span></span>
+          <svg class="acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </summary>
+        <div class="acc-body">
+          <p>Somos uma Loja Conceito Anjo Store — o mais alto nível de parceria com a Anjo Tintas. Isso significa acesso à linha completa de produtos Anjo, atendimento técnico especializado e mais de 5 mil cores disponíveis com tecnologia de colorimetria digital.</p>
+          <div class="acc-tags">
+            <span class="acc-tag">Linha imobiliária completa</span>
+            <span class="acc-tag">Preços imbatíveis</span>
+            <span class="acc-tag">Sistema Tintométrico Aquarelas (+5mil cores)</span>
+            <span class="acc-tag">Atendimento personalizado</span>
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="acc-left"><span class="acc-emoji">🏠</span> Pintura Imobiliária</span>
+          <svg class="acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </summary>
+        <div class="acc-body">
+          <p>Tintas para ambientes internos e externos com acabamento de alto padrão. Linhas econômicas, premium e extra premium para todos os projetos e orçamentos.</p>
+          <div class="acc-tags">
+            <span class="acc-tag">Massas para reparo</span>
+            <span class="acc-tag">Fundos e Seladores</span>
+            <span class="acc-tag">Tintas Acrílicas</span>
+            <span class="acc-tag">Esmaltes Sintéticos</span>
+            <span class="acc-tag">Vernizes e Stains</span>
+            <span class="acc-tag">Thinners e Solventes</span>
+            <span class="acc-tag">Tinta Piso</span>
+            <span class="acc-tag">Resina para telhado</span>
+            <span class="acc-tag">Materiais para isolamento (Fitas e plásticos)</span>
+            <span class="acc-tag">Abrasivos (Lixas e discos)</span>
+            <span class="acc-tag">Limpeza e remoção</span>
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="acc-left"><span class="acc-emoji">🏭</span> Pintura Industrial</span>
+          <svg class="acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </summary>
+        <div class="acc-body">
+          <p>Soluções de alta performance para estruturas metálicas, galpões, equipamentos e superfícies de uso intenso. Produtos com resistência superior para ambientes exigentes.</p>
+          <div class="acc-tags">
+            <span class="acc-tag">Fundos e Primers</span>
+            <span class="acc-tag">Esmaltes Industriais</span>
+            <span class="acc-tag">Demarcação Viária</span>
+            <span class="acc-tag">Epóxi</span>
+            <span class="acc-tag">PU - Piso Blindado</span>
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="acc-left"><span class="acc-emoji">💧</span> Impermeabilização</span>
+          <svg class="acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </summary>
+        <div class="acc-body">
+          <p>Soluções completas para proteger lajes, terraços, calhas, banheiros e fachadas contra infiltrações. Impermeabilizantes rígidos, flexíveis e mantas asfálticas.</p>
+          <div class="acc-tags">
+            <span class="acc-tag">Sela trincas</span>
+            <span class="acc-tag">Lajes</span>
+            <span class="acc-tag">Fundação</span>
+            <span class="acc-tag">Paredes e rodapés</span>
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="acc-left"><span class="acc-emoji">🖌️</span><span class="acc-title">Ferramentas<span class="mobile-break"> </span>Manuais para Pintura</span></span>
+          <svg class="acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </summary>
+        <div class="acc-body">
+          <p>Tudo que o profissional da pintura precisa para trabalhar com qualidade e produtividade. Rolos, pincéis, espátulas e EPIs das melhores marcas do mercado.</p>
+          <div class="acc-tags">
+            <span class="acc-tag">Pincéis</span>
+            <span class="acc-tag">Rolos</span>
+            <span class="acc-tag">Espátulas</span>
+            <span class="acc-tag">Desempenadeiras</span>
+            <span class="acc-tag">Caçambas</span>
+            <span class="acc-tag">EPI's (luvas, máscaras, macacões)</span>
+            <span class="acc-tag">Prolongadores</span>
+            <span class="acc-tag">Escadas</span>
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="acc-left"><span class="acc-emoji">🔌</span><span class="acc-title">Ferramentas<span class="mobile-break"> </span>Elétricas</span></span>
+          <svg class="acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </summary>
+        <div class="acc-body">
+          <p>Equipamentos elétricos e pneumáticos para acelerar a obra e elevar a produtividade do profissional da pintura.</p>
+          <div class="acc-tags">
+            <span class="acc-tag">Lixadeiras Elétricas</span>
+            <span class="acc-tag">Agitadores de Tinta</span>
+            <span class="acc-tag">Pistolas de Pintura Elétricas</span>
+            <span class="acc-tag">Pistolas de Pintura à Bateria</span>
+            <span class="acc-tag">Pistolas Pneumáticas</span>
+            <span class="acc-tag">Máquina de Pintura Airless</span>
+          </div>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<section class="brands" id="marcas">
+  <div class="container">
+    <div class="brands-head">
+      <h2 class="section-title">As melhores marcas<span class="mobile-break"> </span>do mercado</h2>
+    </div>
+
+    <div class="anjo-card">
+      <span class="anjo-card-text">Uma loja conceito Anjo Store</span>
+      <img src="assets/Logos_fornecedores/00-Anjo.png" alt="Anjo Tintas" class="anjo-card-logo" />
+    </div>
+
+    <div class="brands-grid-wrap" id="brandsGridWrap">
+    <div class="brands-grid">
+      <div class="brand-chip"><img src="assets/Logos_fornecedores/01-Anjo.png" alt="Anjo Tintas" /></div>
+      <div class="brand-chip"><img src="assets/Logos_fornecedores/02-Suvinil.png" alt="Suvinil" style="max-height:66px;max-width:77%;" /></div>
+      <div class="brand-chip"><img src="assets/Logos_fornecedores/03-Sherwin Williams.png" alt="Sherwin-Williams" style="max-height:66px;max-width:77%;" /></div>
+      <div class="brand-chip"><img src="assets/Logos_fornecedores/04-Lukscolor.png" alt="Lukscolor" style="max-height:63px;max-width:73.5%;" /></div>
+      <div class="brand-chip"><img src="assets/Logos_fornecedores/05-Montana.png" alt="Montana" /></div>
+      <div class="brand-chip"><img src="assets/Logos_fornecedores/06-Golden.png" alt="Golden" style="max-height:69px;max-width:81%;" /></div>
+      <div class="brand-chip"><img src="assets/Logos_fornecedores/07-Inkor.png" alt="Inkor" /></div>
+      <div class="brand-chip"><img src="assets/Logos_fornecedores/08-Hydronorth.png" alt="Hydronorth" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/09-Selamix.jpg" alt="Selamix" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/10-Flexcollor.png" alt="Flexcollor" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/11-Queveks.png" alt="Queveks" style="max-height:66px;max-width:77%;" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/12-Sana Agua.png" alt="Sana Agua" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/13-Atlas.png" alt="Atlas" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/14-Condor.png" alt="Condor" style="max-height:66px;max-width:77%;" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/15-Nauber.png" alt="Nauber" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/16-Roma.png" alt="Roma" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/17-Adere.png" alt="Adere" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/18-Norton.png" alt="Norton" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/19-Alcar.png" alt="Alcar" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/20-Mirka.png" alt="Mirka" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/21-Vonder.png" alt="Vonder" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/22-Bosh.png" alt="Bosch" style="max-height:66px;max-width:77%;" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/23-Lynus.jpg" alt="Lynus" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/24-Lotus.png" alt="Lotus" style="max-height:66px;max-width:77%;" /></div>
+    </div>
+    </div>
+    <button class="brands-toggle" id="brandsToggle">
+      <span>Clique aqui para ver<br>todas as marcas</span>
+      <svg width="28" height="16" viewBox="0 0 28 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 1 14 14 27 1"/></svg>
+    </button>
+  </div>
+</section>
+
+<!-- ══ VIDEO THUMB ════════════════════════════════════════════ -->
+<!-- Quando o vídeo institucional estiver no YouTube: troque YOUTUBE_VIDEO_ID abaixo pelo ID real
+     e remova "display: none" de .video-thumb no CSS para reativar esta seção. -->
+<div class="video-thumb" data-youtube-id="YOUTUBE_VIDEO_ID">
+  <img src="assets/Imgs-loja/Fachada.png" alt="Pizzoni Tintas — Vídeo institucional" />
+  <div class="play-overlay-wrap">
+    <div class="play-overlay">
+      <div class="play-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 6.5 L5 17.5 Q5 21 7.9 19.1 L16.1 13.9 Q19 12 16.1 10.1 L7.9 4.9 Q5 3 5 6.5 Z"/></svg>
+      </div>
+      <span class="play-label">Clique e conheça<br>nossa loja</span>
+    </div>
+  </div>
+</div>
+
+<div class="video-modal" id="videoModal">
+  <div class="video-modal-backdrop"></div>
+  <div class="video-modal-box">
+    <button class="video-modal-close" aria-label="Fechar vídeo">&times;</button>
+    <div class="video-modal-frame"></div>
+  </div>
+</div>
+
+<!-- ══ TERRITORY ═════════════════════════════════════════════ -->
+<section class="territory" id="regiao">
+  <div class="container">
+    <div class="territory-copy">
+      <h2 class="section-title" style="color:var(--navy)">Estamos localizados<br>no Rio Maina, atendendo Criciúma e toda a região.</h2>
+      <p>O Pizzoni Tintas é uma extensão do Pizzoni Materiais de Construção, loja referência no segmento há mais de 25 anos. Localizada no endereço ao lado, nossa loja de tintas complementa esse atendimento, oferecendo ainda mais soluções, com a mesma parceria e atendimento especial que você já<span class="mobile-break"> </span>conhece e confia.</p>
+      <div class="neigh-grid">
+        <span class="neigh-chip">Criciúma</span>
+        <span class="neigh-chip">Içara</span>
+        <span class="neigh-chip">Forquilhinha</span>
+        <span class="neigh-chip">Morro da Fumaça</span>
+        <span class="neigh-chip">Cocal do Sul</span>
+        <span class="neigh-chip">Urussanga</span>
+        <span class="neigh-chip">Sangão</span>
+        <span class="neigh-chip">Toda a região</span>
+      </div>
+      <a href="https://wa.me/5548996280136?text=Olá!%20Desejo%20verificar%20entrega%20na%20minha%20região.%20Vim%20pelo%20site." class="btn btn-red" target="_blank" rel="noopener">
+        Verificar entrega na minha região
+      </a>
+    </div>
+
+    <div class="map-wrap">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.9037959245024!2d-49.4357585!3d-28.662599099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95219cb261159831%3A0xd631f29f448276e!2sPIZZONI%20TINTAS!5e0!3m2!1spt-BR!2sbr!4v1779848220991!5m2!1spt-BR!2sbr"
+        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ═══════════════════════════════════════════════════ -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-copy">
+      <h2 class="section-title">O Pizzoni Tintas é o seu parceiro certo para todas<span class="mobile-break"> </span>as demãos</h2>
+      <p style="margin-top:36px;">Solicite seu orçamento agora mesmo. Atendimento rápido via WhatsApp ou telefone.</p>
+    </div>
+
+    <div>
+      <div class="contact-stack">
+        <a href="https://wa.me/5548996280136?text=Olá!%20Vim%20pelo%20site%20e%20preciso%20de%20ajuda." class="contact-tile" target="_blank" rel="noopener">
+          <div class="ct-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          <div>
+            <div class="ct-label">WhatsApp</div>
+            <div class="ct-val">48 99628-0136</div>
+          </div>
+          <svg class="ct-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+
+        <a href="tel:4834387112" class="contact-tile">
+          <div class="ct-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="ct-label">Telefone</div>
+            <div class="ct-val">48 3438-7112</div>
+          </div>
+          <svg class="ct-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+      <p class="cta-note">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;align-self:flex-start;margin-top:2px;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span style="line-height:1.8;">Seg–Sex:<span class="mobile-break"> </span>07h30 às 12h – 13h30 às 18h<br>Sáb: 07h30 às 12h</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ════════════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/Assinatura-horizontal.svg" alt="Pizzoni Tintas" />
+        <p>Loja conceito Anjo Tintas em Criciúma. Especialistas em tintas imobiliárias e industriais com mais de 5 mil cores e atendimento técnico especializado para toda a região.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/pizzonitintas/" class="soc-btn" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Atendimento</h4>
+        <ul class="footer-links">
+          <li><a href="tel:4834387112">48 3438-7112</a></li>
+          <li><a href="https://wa.me/5548996280136" target="_blank" rel="noopener">48 99628-0136</a></li>
+          <li><span>Seg–Sex: 07h30 às 12h – 13h30 às 18h</span></li>
+          <li><span>Sáb: 07h30 às 12h</span></li>
+          <li><a href="https://maps.app.goo.gl/7AbmTqMJLzevJtMZ8" target="_blank" rel="noopener">R. Virgílio Mondardo, 1200 — Rio Maina, Criciúma – SC</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul class="footer-links">
+          <li><a href="#audience">Benefícios para você</a></li>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#marcas">Marcas</a></li>
+          <li><a href="#regiao">Criciúma e região</a></li>
+        </ul>
+        <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" style="display:inline-flex;align-items:center;gap:8px;margin-top:24px;color:rgba(255,255,255,.7);font-size:1rem;font-weight:700;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.7)'">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+          Voltar ao topo
+        </a>
+      </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Pizzoni Tintas — Todos os direitos reservados.</p>
+      <a href="#">Política de privacidade</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ WPP FAB ════════════════════════════════════════════════ -->
+<a href="https://wa.me/5548996280136?text=Olá!%20Vim%20pelo%20site%20e%20preciso%20de%20ajuda." class="wpp-fab" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+
+<script>
+  // "Ver mais marcas" (mobile)
+  const brandsToggle = document.getElementById('brandsToggle');
+  const brandsGridWrap = document.getElementById('brandsGridWrap');
+  if (brandsToggle) {
+    brandsToggle.addEventListener('click', () => {
+      const expanded = brandsToggle.classList.toggle('expanded');
+      document.querySelectorAll('.brand-extra').forEach(el => el.classList.toggle('show', expanded));
+      if (brandsGridWrap) brandsGridWrap.classList.toggle('expanded', expanded);
+      brandsToggle.childNodes[0].textContent = expanded ? 'Ver menos marcas ' : 'Ver todas as marcas ';
+    });
+  }
+
+  // Menu hambúrguer (mobile)
+  const navbarBurger = document.getElementById('navbarBurger');
+  const navbarNav = document.querySelector('.navbar-nav');
+  if (navbarBurger && navbarNav) {
+    navbarBurger.addEventListener('click', () => {
+      navbarNav.classList.toggle('mobile-open');
+    });
+    navbarNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navbarNav.classList.remove('mobile-open'));
+    });
+  }
+
+  // Auto-scroll + drag no carrossel
+  const galleryWrap = document.querySelector('.gallery-track-wrap');
+  let halfScroll = 0;
+  let autoScroll = true;
+  let dragStartX, dragScrollLeft, isDragging = false;
+
+  // Ribbon ticker
+  const ribbonTrack = document.querySelector('.ribbon-track');
+  let ribbonX = 0;
+  let ribbonHalf = 0;
+
+  function tick() {
+    if (autoScroll && halfScroll > 0) {
+      galleryWrap.scrollLeft += 1;
+      if (galleryWrap.scrollLeft >= halfScroll) galleryWrap.scrollLeft = 0;
+    }
+    if (ribbonHalf > 0) {
+      ribbonX -= 1;
+      if (Math.abs(ribbonX) >= ribbonHalf) ribbonX = 0;
+      ribbonTrack.style.transform = 'translateX(' + ribbonX + 'px)';
+    }
+    requestAnimationFrame(tick);
+  }
+
+  window.addEventListener('load', () => {
+    halfScroll = galleryWrap.scrollWidth / 2;
+    ribbonHalf = ribbonTrack.offsetWidth / 2;
+    requestAnimationFrame(tick);
+  });
+
+  galleryWrap.addEventListener('mouseleave', () => { if (!isDragging) autoScroll = true; });
+
+  galleryWrap.addEventListener('mousedown', e => {
+    isDragging = true;
+    autoScroll = false;
+    galleryWrap.classList.add('dragging');
+    dragStartX = e.pageX - galleryWrap.offsetLeft;
+    dragScrollLeft = galleryWrap.scrollLeft;
+    e.preventDefault();
+  });
+  document.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    const x = e.pageX - galleryWrap.offsetLeft;
+    galleryWrap.scrollLeft = dragScrollLeft - (x - dragStartX);
+    if (halfScroll > 0) {
+      if (galleryWrap.scrollLeft >= halfScroll) galleryWrap.scrollLeft = 0;
+      if (galleryWrap.scrollLeft < 0) galleryWrap.scrollLeft = halfScroll - 1;
+    }
+  });
+  document.addEventListener('mouseup', () => {
+    if (!isDragging) return;
+    isDragging = false;
+    galleryWrap.classList.remove('dragging');
+    autoScroll = true;
+  });
+
+  // Modal do vídeo institucional (YouTube)
+  const videoThumb = document.querySelector('.video-thumb');
+  const videoModal = document.getElementById('videoModal');
+  if (videoThumb && videoModal) {
+    const modalFrame = videoModal.querySelector('.video-modal-frame');
+    const modalClose = videoModal.querySelector('.video-modal-close');
+    const modalBackdrop = videoModal.querySelector('.video-modal-backdrop');
+
+    function openVideoModal() {
+      const ytId = videoThumb.dataset.youtubeId;
+      modalFrame.innerHTML = '<iframe src="https://www.youtube.com/embed/' + ytId + '?autoplay=1" title="Pizzoni Tintas" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+      videoModal.classList.add('open');
+    }
+    function closeVideoModal() {
+      videoModal.classList.remove('open');
+      modalFrame.innerHTML = '';
+    }
+    videoThumb.addEventListener('click', openVideoModal);
+    modalClose.addEventListener('click', closeVideoModal);
+    modalBackdrop.addEventListener('click', closeVideoModal);
+  }
+
+  const accDetails = document.querySelectorAll('.accordion details');
+  accDetails.forEach(detail => {
+    detail.addEventListener('toggle', () => {
+      if (detail.open) {
+        accDetails.forEach(d => { if (d !== detail) d.removeAttribute('open'); });
+        setTimeout(() => {
+          detail.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 50);
+      }
+    });
+  });
+
+</script>
+<script>
+
+  ['audience', 'produtos', 'marcas', 'regiao'].forEach(id => {
+    document.querySelectorAll(`a[href="#${id}"]`).forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = id === 'audience' ? document.getElementById('aud-cards') : document.getElementById(id);
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    });
+  });
+</script>
+</body>
+</html>
