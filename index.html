@@ -25,15 +25,16 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" /></noscript>
 
   <style>
     /* ── FONTS ─────────────────────────────────────────────── */
-    @font-face { font-family: 'AmsiPro'; src: url('Fonts/AmsiProCondensed-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
-    @font-face { font-family: 'AmsiPro'; src: url('Fonts/AmsiProCondensed-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
-    @font-face { font-family: 'AmsiPro'; src: url('Fonts/AmsiProCondensed-Black.ttf') format('truetype'); font-weight: 900; font-style: normal; font-display: swap; }
-    @font-face { font-family: 'AmsiPro'; src: url('Fonts/AmsiProCondensed-Ultra.ttf') format('truetype'); font-weight: 800; font-style: normal; font-display: swap; }
-    @font-face { font-family: 'AmsiPro'; src: url('Fonts/AmsiProCondensed-SemiBold.ttf') format('truetype'); font-weight: 600; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'AmsiPro'; src: url('Fonts/AmsiProCondensed-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'AmsiPro'; src: url('Fonts/AmsiProCondensed-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'AmsiPro'; src: url('Fonts/AmsiProCondensed-Black.woff2') format('woff2'); font-weight: 900; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'AmsiPro'; src: url('Fonts/AmsiProCondensed-Ultra.woff2') format('woff2'); font-weight: 800; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'AmsiPro'; src: url('Fonts/AmsiProCondensed-SemiBold.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
 
     /* ── RESET & BASE ──────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -74,7 +75,7 @@
       --p-amber-ink:    #8A5800;
     }
 
-    body { font-family: 'Roboto', sans-serif; color: var(--dark); background: var(--white); overflow-x: hidden; -webkit-font-smoothing: antialiased; touch-action: pan-y; }
+    body { font-family: 'Roboto', sans-serif; color: var(--dark); background: var(--white); overflow-x: hidden; -webkit-font-smoothing: antialiased; touch-action: pan-y; display: flex; flex-direction: column; }
     .container { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 32px; }
 
     /* ── EYEBROW ───────────────────────────────────────────── */
@@ -422,7 +423,7 @@
     .video-modal-close { position: absolute; top: -40px; right: 0; background: none; border: none; color: #fff; font-size: 2.2rem; line-height: 1; cursor: pointer; }
 
     /* ── TERRITORY ─────────────────────────────────────────── */
-    .territory { padding: 56px 0; background: linear-gradient(140deg, #EEF6FF 0%, #F8FFFE 100%); }
+    .territory { padding: 53px 0 56px; background: linear-gradient(140deg, #EEF6FF 0%, #F8FFFE 100%); }
     .territory .container { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
     .territory-copy .eyebrow { margin-bottom: 14px; }
     .territory-copy .section-title { color: var(--navy); margin-bottom: 20px; }
@@ -434,6 +435,16 @@
 
     .map-wrap { border-radius: var(--r-sm); overflow: hidden; box-shadow: 0 4px 32px rgba(0,0,0,.1); }
     .map-wrap iframe { display: block; width: 100%; height: 420px; border: none; }
+    .map-address { display: block; margin-top: 16px; text-align: center; font-family: 'AmsiPro', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--navy); text-decoration: none; transition: color .2s; }
+    .map-address:hover { color: var(--red); text-decoration: underline; }
+    .map-address--inline { font-size: 1.25rem; }
+    .map-address--desktop { display: none; }
+    @media (min-width: 961px) {
+      .map-block { grid-column: 2; }
+      .map-address--inline { display: none; }
+      .map-address--desktop { display: block; font-size: 1.33rem; font-weight: 900; color: var(--red); margin-top: 19px; }
+      .map-address--desktop:hover { color: #c02424; }
+    }
 
     /* ── CTA ───────────────────────────────────────────────── */
     .cta-section { padding: 56px 0; background: var(--navy); position: relative; overflow: hidden; }
@@ -473,21 +484,47 @@
     .footer-brand img { height: 38px; width: auto; margin-bottom: 18px; filter: brightness(0) invert(1); }
     .footer-brand p { color: rgba(255,255,255,.38); font-size: .85rem; line-height: 1.75; margin-bottom: 22px; font-weight: 300; }
     .socials { display: flex; gap: 8px; }
-    .soc-btn { width: 52px; height: 52px; border-radius: var(--r-sm); background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.15); display: flex; align-items: center; justify-content: center; color: var(--white); text-decoration: none; transition: all .2s; }
-    .soc-btn svg { width: 24px; height: 24px; }
-    .soc-btn:hover { background: var(--red); color: var(--white); border-color: var(--red); }
+    .soc-btn { width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; color: var(--white); text-decoration: none; transition: all .2s; }
+    .soc-btn svg { width: 32px; height: 32px; }
+    .soc-btn:hover { color: var(--red); }
     .footer-col h4 { font-family: 'AmsiPro', sans-serif; font-weight: 700; font-size: .72rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 18px; }
     .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
     .footer-links li a, .footer-links li span { color: rgba(255,255,255,.45); font-size: .87rem; text-decoration: none; font-weight: 300; line-height: 1.5; transition: color .2s; }
     .footer-links li a:hover { color: var(--white); }
+    .footer-grid--simple {
+      grid-template-columns: 1fr;
+      grid-template-areas: "logo" "social" "nav" "back";
+      justify-items: center; text-align: center; gap: 32px;
+    }
+    .footer-logo { grid-area: logo; height: 38px; width: auto; filter: brightness(0) invert(1); }
+    .footer-social { grid-area: social; justify-content: center; margin: 0; }
+    .footer-nav { grid-area: nav; align-items: center; }
+    .footer-links--large li a, .footer-links--large li span { font-size: 1.15rem; }
+    .footer-back-top {
+      grid-area: back; display: inline-flex; align-items: center; gap: 8px;
+      color: rgba(255,255,255,.7); font-size: 1rem; font-weight: 700;
+      text-decoration: none; transition: color .2s;
+    }
     .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
     .footer-bottom p, .footer-bottom a { color: rgba(255,255,255,.22); font-size: .78rem; text-decoration: none; }
     .footer-bottom a:hover { color: rgba(255,255,255,.5); }
+    @media (min-width: 961px) {
+      .footer-grid--simple {
+        grid-template-columns: 1fr auto;
+        grid-template-areas: "logo social" "nav back";
+        justify-items: start; text-align: left; row-gap: 20px;
+      }
+      .footer-social { justify-self: end; transform: translateX(20%); }
+      .footer-back-top { justify-self: end; }
+      .footer-links--large { flex-direction: row; gap: 28px; }
+    }
 
     /* ── WPP FAB ───────────────────────────────────────────── */
-    @keyframes wpp-pulse { 0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,.4), 0 0 0 0 rgba(37,211,102,.35); } 50% { box-shadow: 0 4px 20px rgba(37,211,102,.4), 0 0 0 14px rgba(37,211,102,0); } }
-    .wpp-fab { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 98px; height: 98px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,.4); text-decoration: none; transition: transform .2s, box-shadow .2s, opacity .3s; animation: wpp-pulse 2.2s ease-in-out infinite; }
-    .wpp-fab:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,.55); animation: none; }
+    @keyframes wpp-pulse { 0% { transform: scale(1); opacity: .6; } 100% { transform: scale(1.45); opacity: 0; } }
+    .wpp-fab { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 98px; height: 98px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,.4); text-decoration: none; transition: transform .2s, box-shadow .2s, opacity .8s ease; }
+    .wpp-fab::before { content: ''; position: absolute; inset: 0; border-radius: 50%; background: #25D366; animation: wpp-pulse 2.2s ease-out infinite; pointer-events: none; }
+    .wpp-fab:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,.55); }
+    .wpp-fab:hover::before { animation: none; opacity: 0; }
     .wpp-fab svg { width: 45px; height: 45px; }
 
     /* ── GALLERY ──────────────────────────────────────────── */
@@ -509,6 +546,21 @@
       .navbar-nav { display: none; }
     }
     @media (max-width: 600px) {
+      /* Reordena seções via CSS (sem JS) para a galeria aparecer logo após a lata de tinta */
+      .navbar { order: 1; }
+      .hero { order: 2; }
+      .ribbon { order: 3; }
+      .pitch { order: 4; }
+      .paintcan { order: 5; }
+      .gallery-section { order: 6; }
+      .audience { order: 7; }
+      .products { order: 8; }
+      .brands { order: 9; }
+      .video-thumb { order: 10; }
+      .video-modal { order: 11; }
+      .territory { order: 12; }
+      .cta-section { order: 13; }
+      footer { order: 14; }
       .wpp-fab { width: 76px; height: 76px; bottom: 20px; right: 20px; opacity: 0; pointer-events: none; }
       .wpp-fab svg { width: 35px; height: 35px; }
       .wpp-fab.visible { opacity: 1; pointer-events: auto; }
@@ -522,6 +574,8 @@
       .hero-video img { height: auto !important; object-fit: contain; object-position: center; }
       .btn-whatsapp { justify-content: center; width: 100%; box-sizing: border-box; }
       .paintcan { padding: 32px 0; }
+      .gallery-section { margin-top: 5%; }
+      .audience { background: linear-gradient(to bottom, #fff 0%, #F4F4F7 120px); }
       .paintcan-wrap { width: 100%; max-width: 560px; height: auto; aspect-ratio: 1/1; margin-left: 0; margin-top: 0; }
       .paintcan-img { transform: scale(1.46) translateX(3%); }
       .paintcan-inner { width: 72%; transform: translate(-46%, -50%); }
@@ -574,6 +628,8 @@
       .pitch-grid { grid-template-columns: 1fr 1fr; }
       .aud-top, .aud-body { padding: 26px 22px; }
       .benefit-list li { flex-direction: column; align-items: center; text-align: center; gap: 6px; }
+      .footer-grid--simple { gap: 48px; }
+      .footer-brand--centered .soc-btn { transform: translateY(25%); }
       .products > .container > h2, .products > .container > p { text-align: center; }
       .hero-body { padding: 28px 0 52px; }
       .container { padding: 0 20px; }
@@ -613,8 +669,8 @@
 
   <div class="hero-video">
     <picture>
-      <source media="(max-width: 600px)" srcset="assets/Capa-hero-mobile.jpg">
-      <img src="assets/Capa-hero.jpg" alt="Pizzoni Tintas" width="1901" height="541" style="width:100%;height:auto;display:block;" />
+      <source media="(max-width: 600px)" srcset="assets/Capa-hero-mobile.webp">
+      <img src="assets/Capa-hero.webp" alt="Pizzoni Tintas" width="1901" height="541" style="width:100%;height:auto;display:block;" />
     </picture>
   </div>
 
@@ -669,7 +725,7 @@
         <span class="pitch-highlight">EM ATÉ 10X</span>
         <span class="pitch-aside">sem Juros<br>no cartão</span>
       </div>
-      <a href="https://wa.me/5548996280136?text=Olá!%20Desejo%20saber%20mais%20sobre%20condições%20e%20orçamento.%20Vim%20pelo%20site." class="btn btn-red" target="_blank" rel="noopener">
+      <a href="https://wa.me/5548996280136?text=Olá!%20Desejo%20saber%20mais%20sobre%20condições%20e%20orçamento.%20Vim%20pelo%20site." class="btn btn-red" target="_blank" rel="noopener" style="padding-top:1px;">
         Fale com um consultor
       </a>
     </div>
@@ -688,7 +744,7 @@
 <!-- ══ PAINT CAN ═════════════════════════════════════════════ -->
 <section class="paintcan">
   <div class="paintcan-wrap">
-    <img src="assets/Lata.png" alt="Lata de tinta Pizzoni" width="1254" height="1254" class="paintcan-img" />
+    <img src="assets/Lata.webp" alt="Lata de tinta Pizzoni" width="1254" height="1254" class="paintcan-img" />
 
     <!-- Conteúdo interno (sobre a lata) -->
     <div class="paintcan-inner">
@@ -719,7 +775,7 @@
       <!-- Cliente final -->
       <div class="aud-card aud-card--navy">
         <div class="aud-tag aud-tag--navy">
-          <img src="assets/Ícone-cliente-final.png" alt="Cliente Final" style="height:65px;width:auto;">
+          <img src="assets/Ícone-cliente-final.png" alt="Cliente Final" style="height:65px;width:auto;" width="545" height="546" />
           Cliente final
         </div>
         <h2>Renove seu espaço com economia e praticidade</h2>
@@ -743,7 +799,7 @@
       <!-- Pintor profissional -->
       <div class="aud-card aud-card--red">
         <div class="aud-tag aud-tag--red">
-          <img src="assets/Ícone-profissional-pintura.png" alt="Profissional da Pintura" style="height:65px;width:auto;">
+          <img src="assets/Ícone-profissional-pintura.png" alt="Profissional da Pintura" style="height:65px;width:auto;" width="545" height="546" />
           Profissional da pintura
         </div>
         <h2>Venha ser nosso parceiro</h2>
@@ -757,7 +813,7 @@
             <li><div class="bicon bicon--red"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span>Brindes e bonificações<span class="mobile-break"> </span>por parceria</span></li>
           </ul>
           <a href="https://wa.me/5548996280136?text=Olá!%20Sou%20profissional%20da%20pintura%20e%20desejo%20conhecer%20o%20programa%20de%20parceiros.%20Vim%20pelo%20site." class="btn btn-outline-red" target="_blank" rel="noopener" style="width:80%;justify-content:center;align-self:center;">
-            Quero ser parceiro Pizzoni
+            Quero ser parceiro Pizzoni Tintas
           </a>
         </div>
       </div>
@@ -770,29 +826,29 @@
 <section class="gallery-section">
   <div class="gallery-track-wrap">
     <div class="gallery-track">
-      <div class="gallery-slide"><img src="assets/Imgs-loja/fachada-2.jpg" alt="Pizzoni Tintas" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7976.jpg" alt="Pizzoni Tintas" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7978.jpg" alt="Pizzoni Tintas" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7981.jpg" alt="Pizzoni Tintas" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7983.jpg" alt="Pizzoni Tintas" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7988-2.jpg" alt="Pizzoni Tintas" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7991.jpg" alt="Pizzoni Tintas" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7993.jpg" alt="Pizzoni Tintas" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7994.jpg" alt="Pizzoni Tintas" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7995.jpg" alt="Pizzoni Tintas" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/05.jpg" alt="Pizzoni Tintas" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/fachada-2.webp" alt="Pizzoni Tintas" width="673" height="900" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7976.webp" alt="Pizzoni Tintas" width="506" height="900" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7978.webp" alt="Pizzoni Tintas" width="506" height="900" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7981.webp" alt="Pizzoni Tintas" width="506" height="900" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7983.webp" alt="Pizzoni Tintas" width="506" height="900" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7988-2.webp" alt="Pizzoni Tintas" width="507" height="900" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7991.webp" alt="Pizzoni Tintas" width="506" height="900" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7993.webp" alt="Pizzoni Tintas" width="506" height="900" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7994.webp" alt="Pizzoni Tintas" width="506" height="900" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7995.webp" alt="Pizzoni Tintas" width="506" height="900" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/05.webp" alt="Pizzoni Tintas" width="507" height="900" /></div>
       <!-- duplicadas para loop infinito -->
-      <div class="gallery-slide"><img src="assets/Imgs-loja/fachada-2.jpg" alt="Pizzoni Tintas" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7976.jpg" alt="Pizzoni Tintas" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7978.jpg" alt="Pizzoni Tintas" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7981.jpg" alt="Pizzoni Tintas" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7983.jpg" alt="Pizzoni Tintas" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7988-2.jpg" alt="Pizzoni Tintas" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7991.jpg" alt="Pizzoni Tintas" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7993.jpg" alt="Pizzoni Tintas" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7994.jpg" alt="Pizzoni Tintas" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7995.jpg" alt="Pizzoni Tintas" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/05.jpg" alt="Pizzoni Tintas" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/fachada-2.webp" alt="Pizzoni Tintas" width="673" height="900" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7976.webp" alt="Pizzoni Tintas" width="506" height="900" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7978.webp" alt="Pizzoni Tintas" width="506" height="900" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7981.webp" alt="Pizzoni Tintas" width="506" height="900" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7983.webp" alt="Pizzoni Tintas" width="506" height="900" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7988-2.webp" alt="Pizzoni Tintas" width="507" height="900" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7991.webp" alt="Pizzoni Tintas" width="506" height="900" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7993.webp" alt="Pizzoni Tintas" width="506" height="900" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7994.webp" alt="Pizzoni Tintas" width="506" height="900" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7995.webp" alt="Pizzoni Tintas" width="506" height="900" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/05.webp" alt="Pizzoni Tintas" width="507" height="900" /></div>
     </div>
   </div>
 </section>
@@ -806,7 +862,7 @@
 
       <details>
         <summary>
-          <span class="acc-left"><span class="acc-emoji"><img src="assets/Icones/ícone-loja-conceito-anjo.png" alt="Loja Conceito Anjo" style="height:25px;width:auto;position:relative;top:3px;"></span><span class="acc-title">Loja Conceito<span class="mobile-break"> </span>Anjo Store</span></span>
+          <span class="acc-left"><span class="acc-emoji"><img src="assets/Icones/ícone-loja-conceito-anjo.png" alt="Loja Conceito Anjo" style="height:25px;width:auto;position:relative;top:3px;" width="197" height="129" /></span><span class="acc-title">Loja Conceito<span class="mobile-break"> </span>Anjo Store</span></span>
           <svg class="acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </summary>
         <div class="acc-body">
@@ -926,35 +982,35 @@
 
     <div class="anjo-card">
       <span class="anjo-card-text">Uma loja conceito Anjo Store</span>
-      <img src="assets/Logos_fornecedores/00-Anjo.png" alt="Anjo Tintas" class="anjo-card-logo" />
+      <img src="assets/Logos_fornecedores/00-Anjo.webp" alt="Anjo Tintas" class="anjo-card-logo" width="500" height="159" />
     </div>
 
     <div class="brands-grid-wrap" id="brandsGridWrap">
     <div class="brands-grid">
-      <div class="brand-chip"><img src="assets/Logos_fornecedores/01-Anjo.png" alt="Anjo Tintas" /></div>
-      <div class="brand-chip"><img src="assets/Logos_fornecedores/02-Suvinil.png" alt="Suvinil" style="max-height:66px;max-width:77%;" /></div>
-      <div class="brand-chip"><img src="assets/Logos_fornecedores/03-Sherwin Williams.png" alt="Sherwin-Williams" style="max-height:66px;max-width:77%;" /></div>
-      <div class="brand-chip"><img src="assets/Logos_fornecedores/04-Lukscolor.png" alt="Lukscolor" style="max-height:63px;max-width:73.5%;" /></div>
-      <div class="brand-chip"><img src="assets/Logos_fornecedores/05-Montana.png" alt="Montana" /></div>
-      <div class="brand-chip"><img src="assets/Logos_fornecedores/06-Golden.png" alt="Golden" style="max-height:69px;max-width:81%;" /></div>
-      <div class="brand-chip"><img src="assets/Logos_fornecedores/07-Inkor.png" alt="Inkor" /></div>
-      <div class="brand-chip"><img src="assets/Logos_fornecedores/08-Hydronorth.png" alt="Hydronorth" /></div>
-      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/09-Selamix.jpg" alt="Selamix" /></div>
-      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/10-Flexcollor.png" alt="Flexcollor" /></div>
-      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/11-Queveks.png" alt="Queveks" style="max-height:66px;max-width:77%;" /></div>
-      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/12-Sana Agua.png" alt="Sana Agua" /></div>
-      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/13-Atlas.png" alt="Atlas" /></div>
-      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/14-Condor.png" alt="Condor" style="max-height:66px;max-width:77%;" /></div>
-      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/15-Nauber.png" alt="Nauber" /></div>
-      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/16-Roma.png" alt="Roma" /></div>
-      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/17-Adere.png" alt="Adere" /></div>
-      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/18-Norton.png" alt="Norton" /></div>
-      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/19-Alcar.png" alt="Alcar" /></div>
-      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/20-Mirka.png" alt="Mirka" /></div>
-      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/21-Vonder.png" alt="Vonder" /></div>
-      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/22-Bosh.png" alt="Bosch" style="max-height:66px;max-width:77%;" /></div>
-      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/23-Lynus.jpg" alt="Lynus" /></div>
-      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/24-Lotus.png" alt="Lotus" style="max-height:66px;max-width:77%;" /></div>
+      <div class="brand-chip"><img src="assets/Logos_fornecedores/01-Anjo.webp" alt="Anjo Tintas" width="500" height="161" /></div>
+      <div class="brand-chip"><img src="assets/Logos_fornecedores/02-Suvinil.webp" alt="Suvinil" style="max-height:66px;max-width:77%;" width="500" height="106" /></div>
+      <div class="brand-chip"><img src="assets/Logos_fornecedores/03-Sherwin Williams.webp" alt="Sherwin-Williams" style="max-height:66px;max-width:77%;" width="500" height="248" /></div>
+      <div class="brand-chip"><img src="assets/Logos_fornecedores/04-Lukscolor.webp" alt="Lukscolor" style="max-height:63px;max-width:73.5%;" width="500" height="114" /></div>
+      <div class="brand-chip"><img src="assets/Logos_fornecedores/05-Montana.webp" alt="Montana" width="332" height="116" /></div>
+      <div class="brand-chip"><img src="assets/Logos_fornecedores/06-Golden.webp" alt="Golden" style="max-height:69px;max-width:81%;" width="511" height="157" /></div>
+      <div class="brand-chip"><img src="assets/Logos_fornecedores/07-Inkor.webp" alt="Inkor" width="241" height="62" /></div>
+      <div class="brand-chip"><img src="assets/Logos_fornecedores/08-Hydronorth.webp" alt="Hydronorth" width="401" height="106" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/09-Selamix.webp" alt="Selamix" width="500" height="149" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/10-Flexcollor.webp" alt="Flexcollor" width="500" height="93" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/11-Queveks.webp" alt="Queveks" style="max-height:66px;max-width:77%;" width="311" height="73" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/12-Sana Agua.webp" alt="Sana Agua" width="500" height="148" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/13-Atlas.webp" alt="Atlas" width="410" height="97" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/14-Condor.webp" alt="Condor" style="max-height:66px;max-width:77%;" width="500" height="86" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/15-Nauber.webp" alt="Nauber" width="387" height="115" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/16-Roma.webp" alt="Roma" width="468" height="117" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/17-Adere.webp" alt="Adere" width="157" height="69" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/18-Norton.webp" alt="Norton" width="500" height="165" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/19-Alcar.webp" alt="Alcar" width="194" height="79" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/20-Mirka.webp" alt="Mirka" width="500" height="94" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/21-Vonder.webp" alt="Vonder" width="440" height="132" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/22-Bosh.webp" alt="Bosch" style="max-height:66px;max-width:77%;" width="500" height="115" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/23-Lynus.webp" alt="Lynus" width="500" height="158" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/24-Lotus.webp" alt="Lotus" style="max-height:66px;max-width:77%;" width="500" height="279" /></div>
     </div>
     </div>
     <button class="brands-toggle" id="brandsToggle">
@@ -968,7 +1024,7 @@
 <!-- Quando o vídeo institucional estiver no YouTube: troque YOUTUBE_VIDEO_ID abaixo pelo ID real
      e remova "display: none" de .video-thumb no CSS para reativar esta seção. -->
 <div class="video-thumb" data-youtube-id="YOUTUBE_VIDEO_ID">
-  <img src="assets/Imgs-loja/Fachada.jpg" alt="Pizzoni Tintas — Vídeo institucional" />
+  <img src="assets/Imgs-loja/Fachada.webp" alt="Pizzoni Tintas — Vídeo institucional" width="1672" height="941" />
   <div class="play-overlay-wrap">
     <div class="play-overlay">
       <div class="play-btn">
@@ -992,6 +1048,7 @@
   <div class="container">
     <div class="territory-copy">
       <h2 class="section-title" style="color:var(--navy)">Estamos localizados<br>no Rio Maina, atendendo Criciúma e toda a região.</h2>
+      <a href="https://maps.app.goo.gl/7AbmTqMJLzevJtMZ8" target="_blank" rel="noopener" class="map-address map-address--inline" style="text-align:center;margin:8px 0 20px;color:var(--red);">Rua Virgílio Mondardo, 1200 - Rio Maina<br>Criciúma SC, CEP: 88818-195.</a>
       <p>O Pizzoni Tintas é uma extensão do Pizzoni Materiais de Construção, loja referência no segmento há mais de 25 anos. Localizada no endereço ao lado, nossa loja de tintas complementa esse atendimento, oferecendo ainda mais soluções, com a mesma parceria e atendimento especial que você já<span class="mobile-break"> </span>conhece e confia.</p>
       <div class="neigh-grid">
         <span class="neigh-chip">Criciúma</span>
@@ -1003,16 +1060,19 @@
         <span class="neigh-chip">Sangão</span>
         <span class="neigh-chip">Toda a região</span>
       </div>
-      <a href="https://wa.me/5548996280136?text=Olá!%20Desejo%20verificar%20entrega%20na%20minha%20região.%20Vim%20pelo%20site." class="btn btn-red" target="_blank" rel="noopener">
+      <a href="https://wa.me/5548996280136?text=Olá!%20Desejo%20verificar%20entrega%20na%20minha%20região.%20Vim%20pelo%20site." class="btn btn-red" target="_blank" rel="noopener" style="padding-top:1px;">
         Verificar entrega na minha região
       </a>
     </div>
 
-    <div class="map-wrap">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.9037959245024!2d-49.4357585!3d-28.662599099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95219cb261159831%3A0xd631f29f448276e!2sPIZZONI%20TINTAS!5e0!3m2!1spt-BR!2sbr!4v1779848220991!5m2!1spt-BR!2sbr"
-        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+    <div class="map-block">
+      <div class="map-wrap">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.9037959245024!2d-49.4357585!3d-28.662599099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95219cb261159831%3A0xd631f29f448276e!2sPIZZONI%20TINTAS!5e0!3m2!1spt-BR!2sbr!4v1779848220991!5m2!1spt-BR!2sbr"
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <a href="https://maps.app.goo.gl/7AbmTqMJLzevJtMZ8" target="_blank" rel="noopener" class="map-address map-address--desktop">Rua Virgílio Mondardo, 1200 - Rio Maina<br>Criciúma SC, CEP: 88818-195.</a>
     </div>
   </div>
 </section>
@@ -1060,43 +1120,26 @@
 <!-- ══ FOOTER ════════════════════════════════════════════════ -->
 <footer>
   <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="assets/Assinatura-horizontal.svg" alt="Pizzoni Tintas" />
-        <p>Loja conceito Anjo Tintas em Criciúma. Especialistas em tintas imobiliárias e industriais com mais de 5 mil cores e atendimento técnico especializado para toda a região.</p>
-        <div class="socials">
-          <a href="https://www.instagram.com/pizzonitintas/" class="soc-btn" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          </a>
-        </div>
-      </div>
+    <div class="footer-grid footer-grid--simple">
+      <img src="assets/Assinatura-horizontal.svg" alt="Pizzoni Tintas" class="footer-logo" />
 
-      <div class="footer-cols">
-      <div class="footer-col">
-        <h4>Atendimento</h4>
-        <ul class="footer-links">
-          <li><a href="tel:4834387112">48 3438-7112</a></li>
-          <li><a href="https://wa.me/5548996280136" target="_blank" rel="noopener">48 99628-0136</a></li>
-          <li><span>Seg–Sex: 07h30 às 12h – 13h30 às 18h</span></li>
-          <li><span>Sáb: 07h30 às 12h</span></li>
-          <li><a href="https://maps.app.goo.gl/7AbmTqMJLzevJtMZ8" target="_blank" rel="noopener">R. Virgílio Mondardo, 1200 — Rio Maina, Criciúma – SC</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Navegação</h4>
-        <ul class="footer-links">
-          <li><a href="#audience">Benefícios para você</a></li>
-          <li><a href="#produtos">Produtos</a></li>
-          <li><a href="#marcas">Marcas</a></li>
-          <li><a href="#regiao">Criciúma e região</a></li>
-        </ul>
-        <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" style="display:inline-flex;align-items:center;gap:8px;margin-top:24px;color:rgba(255,255,255,.7);font-size:1rem;font-weight:700;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.7)'">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-          Voltar ao topo
+      <div class="socials footer-social">
+        <a href="https://www.instagram.com/pizzonitintas/" class="soc-btn" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
         </a>
       </div>
-      </div>
+
+      <ul class="footer-links footer-links--large footer-nav">
+        <li><a href="#audience">Benefícios para você</a></li>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#marcas">Marcas</a></li>
+        <li><a href="#regiao">Criciúma e região</a></li>
+      </ul>
+
+      <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="footer-back-top" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.7)'">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+        Voltar ao topo
+      </a>
     </div>
 
     <div class="footer-bottom">
@@ -1129,13 +1172,20 @@
   const wppFab = document.querySelector('.wpp-fab');
   const heroSection = document.querySelector('.hero');
   if (wppFab && heroSection) {
+
+    let wppFabTicking = false;
     function toggleWppFab() {
       if (window.innerWidth > 600) { wppFab.classList.add('visible'); return; }
       const heroBottom = heroSection.getBoundingClientRect().bottom;
       wppFab.classList.toggle('visible', heroBottom <= 0);
     }
-    window.addEventListener('scroll', toggleWppFab);
-    window.addEventListener('resize', toggleWppFab);
+    function onScrollOrResize() {
+      if (wppFabTicking) return;
+      wppFabTicking = true;
+      requestAnimationFrame(() => { toggleWppFab(); wppFabTicking = false; });
+    }
+    window.addEventListener('scroll', onScrollOrResize, { passive: true });
+    window.addEventListener('resize', onScrollOrResize);
     toggleWppFab();
   }
 
@@ -1248,6 +1298,11 @@
     document.querySelectorAll(`a[href="#${id}"]`).forEach(link => {
       link.addEventListener('click', function(e) {
         e.preventDefault();
+        const isMobile = window.matchMedia('(max-width: 600px)').matches;
+        if (id === 'audience' && isMobile) {
+          document.getElementById('audience').scrollIntoView({ behavior: 'smooth', block: 'start' });
+          return;
+        }
         const target = id === 'audience' ? document.getElementById('aud-cards') : document.getElementById(id);
         target.scrollIntoView({ behavior: 'smooth', block: 'center' });
       });
