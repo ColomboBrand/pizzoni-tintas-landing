@@ -509,6 +509,9 @@
       .navbar-nav { display: none; }
     }
     @media (max-width: 600px) {
+      .wpp-fab { width: 76px; height: 76px; bottom: 20px; right: 20px; opacity: 0; pointer-events: none; }
+      .wpp-fab svg { width: 35px; height: 35px; }
+      .wpp-fab.visible { opacity: 1; pointer-events: auto; }
       .navbar .container { height: auto; padding: 20px 20px; }
       .navbar-logo img { height: 46px; }
       .navbar-phone { font-size: 1.15rem; white-space: nowrap; margin-top: 0; }
@@ -1120,6 +1123,20 @@
       if (brandsGridWrap) brandsGridWrap.classList.toggle('expanded', expanded);
       brandsToggle.childNodes[0].textContent = expanded ? 'Ver menos marcas ' : 'Ver todas as marcas ';
     });
+  }
+
+  // Botão flutuante do WhatsApp: só aparece após rolar a tela além da hero (mobile)
+  const wppFab = document.querySelector('.wpp-fab');
+  const heroSection = document.querySelector('.hero');
+  if (wppFab && heroSection) {
+    function toggleWppFab() {
+      if (window.innerWidth > 600) { wppFab.classList.add('visible'); return; }
+      const heroBottom = heroSection.getBoundingClientRect().bottom;
+      wppFab.classList.toggle('visible', heroBottom <= 0);
+    }
+    window.addEventListener('scroll', toggleWppFab);
+    window.addEventListener('resize', toggleWppFab);
+    toggleWppFab();
   }
 
   // Menu hambúrguer (mobile)
