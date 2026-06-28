@@ -23,14 +23,12 @@
   <!-- Canonical -->
   <link rel="canonical" href="https://pizzonitintas.com.br/" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" as="image" href="assets/Capa-hero.webp" imagesrcset="assets/Capa-hero-mobile.webp 600w, assets/Capa-hero.webp 1901w" imagesizes="100vw" fetchpriority="high" />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" /></noscript>
+  <link rel="preload" as="font" href="Fonts/Roboto-Variable.woff2" type="font/woff2" crossorigin />
 
   <style>
     /* ── FONTS ─────────────────────────────────────────────── */
+    @font-face { font-family: 'Roboto'; src: url('Fonts/Roboto-Variable.woff2') format('woff2-variations'); font-weight: 100 900; font-style: normal; font-display: swap; }
     @font-face { font-family: 'AmsiPro'; src: url('Fonts/AmsiProCondensed-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
     @font-face { font-family: 'AmsiPro'; src: url('Fonts/AmsiProCondensed-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
     @font-face { font-family: 'AmsiPro'; src: url('Fonts/AmsiProCondensed-Black.woff2') format('woff2'); font-weight: 900; font-style: normal; font-display: swap; }
@@ -733,12 +731,12 @@
     </div>
 
     <div class="pitch-delivery">
-      <img src="assets/Ícone-entrega-rápida.svg" alt="Entrega rápida" width="116" height="77" />
+      <img src="assets/Ícone-entrega-rápida.svg" alt="Entrega rápida" width="116" height="77" loading="lazy" decoding="async" />
       <span>Entrega<br>rápida</span>
     </div>
 
     <div class="pitch-cores" style="display:flex;align-items:center;justify-content:flex-end;">
-      <img src="assets/Selo-5mil-cores.svg" alt="+5 mil cores" width="168" height="140" style="height:233px;width:auto;" />
+      <img src="assets/Selo-5mil-cores.svg" alt="+5 mil cores" width="168" height="140" style="height:233px;width:auto;" loading="lazy" decoding="async" />
     </div>
   </div>
 </section>
@@ -746,7 +744,7 @@
 <!-- ══ PAINT CAN ═════════════════════════════════════════════ -->
 <section class="paintcan">
   <div class="paintcan-wrap">
-    <img src="assets/Lata.webp" alt="Lata de tinta Pizzoni" width="1254" height="1254" class="paintcan-img" />
+    <img src="assets/Lata.webp" alt="Lata de tinta Pizzoni" width="1254" height="1254" class="paintcan-img" loading="lazy" decoding="async" />
 
     <!-- Conteúdo interno (sobre a lata) -->
     <div class="paintcan-inner">
@@ -777,7 +775,7 @@
       <!-- Cliente final -->
       <div class="aud-card aud-card--navy">
         <div class="aud-tag aud-tag--navy">
-          <img src="assets/Ícone-cliente-final.png" alt="Cliente Final" style="height:65px;width:auto;" width="545" height="546" />
+          <img src="assets/Ícone-cliente-final.png" alt="Cliente Final" style="height:65px;width:auto;" width="545" height="546" loading="lazy" decoding="async" />
           Cliente final
         </div>
         <h2>Renove seu espaço com economia e praticidade</h2>
@@ -801,7 +799,7 @@
       <!-- Pintor profissional -->
       <div class="aud-card aud-card--red">
         <div class="aud-tag aud-tag--red">
-          <img src="assets/Ícone-profissional-pintura.png" alt="Profissional da Pintura" style="height:65px;width:auto;" width="545" height="546" />
+          <img src="assets/Ícone-profissional-pintura.png" alt="Profissional da Pintura" style="height:65px;width:auto;" width="545" height="546" loading="lazy" decoding="async" />
           Profissional da pintura
         </div>
         <h2>Venha ser nosso parceiro</h2>
@@ -828,29 +826,29 @@
 <section class="gallery-section">
   <div class="gallery-track-wrap">
     <div class="gallery-track">
-      <div class="gallery-slide"><img src="assets/Imgs-loja/fachada-2.webp" alt="Pizzoni Tintas" width="673" height="900" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7976.webp" alt="Pizzoni Tintas" width="506" height="900" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7978.webp" alt="Pizzoni Tintas" width="506" height="900" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7981.webp" alt="Pizzoni Tintas" width="506" height="900" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7983.webp" alt="Pizzoni Tintas" width="506" height="900" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7988-2.webp" alt="Pizzoni Tintas" width="507" height="900" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7991.webp" alt="Pizzoni Tintas" width="506" height="900" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7993.webp" alt="Pizzoni Tintas" width="506" height="900" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7994.webp" alt="Pizzoni Tintas" width="506" height="900" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7995.webp" alt="Pizzoni Tintas" width="506" height="900" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/05.webp" alt="Pizzoni Tintas" width="507" height="900" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/fachada-2.webp" alt="Pizzoni Tintas" width="673" height="900" loading="lazy" decoding="async" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7976.webp" alt="Pizzoni Tintas" width="506" height="900" loading="lazy" decoding="async" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7978.webp" alt="Pizzoni Tintas" width="506" height="900" loading="lazy" decoding="async" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7981.webp" alt="Pizzoni Tintas" width="506" height="900" loading="lazy" decoding="async" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7983.webp" alt="Pizzoni Tintas" width="506" height="900" loading="lazy" decoding="async" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7988-2.webp" alt="Pizzoni Tintas" width="507" height="900" loading="lazy" decoding="async" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7991.webp" alt="Pizzoni Tintas" width="506" height="900" loading="lazy" decoding="async" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7993.webp" alt="Pizzoni Tintas" width="506" height="900" loading="lazy" decoding="async" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7994.webp" alt="Pizzoni Tintas" width="506" height="900" loading="lazy" decoding="async" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7995.webp" alt="Pizzoni Tintas" width="506" height="900" loading="lazy" decoding="async" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/05.webp" alt="Pizzoni Tintas" width="507" height="900" loading="lazy" decoding="async" /></div>
       <!-- duplicadas para loop infinito -->
-      <div class="gallery-slide"><img src="assets/Imgs-loja/fachada-2.webp" alt="Pizzoni Tintas" width="673" height="900" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7976.webp" alt="Pizzoni Tintas" width="506" height="900" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7978.webp" alt="Pizzoni Tintas" width="506" height="900" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7981.webp" alt="Pizzoni Tintas" width="506" height="900" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7983.webp" alt="Pizzoni Tintas" width="506" height="900" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7988-2.webp" alt="Pizzoni Tintas" width="507" height="900" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7991.webp" alt="Pizzoni Tintas" width="506" height="900" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7993.webp" alt="Pizzoni Tintas" width="506" height="900" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7994.webp" alt="Pizzoni Tintas" width="506" height="900" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7995.webp" alt="Pizzoni Tintas" width="506" height="900" /></div>
-      <div class="gallery-slide"><img src="assets/Imgs-loja/05.webp" alt="Pizzoni Tintas" width="507" height="900" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/fachada-2.webp" alt="Pizzoni Tintas" width="673" height="900" loading="lazy" decoding="async" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7976.webp" alt="Pizzoni Tintas" width="506" height="900" loading="lazy" decoding="async" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7978.webp" alt="Pizzoni Tintas" width="506" height="900" loading="lazy" decoding="async" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7981.webp" alt="Pizzoni Tintas" width="506" height="900" loading="lazy" decoding="async" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7983.webp" alt="Pizzoni Tintas" width="506" height="900" loading="lazy" decoding="async" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7988-2.webp" alt="Pizzoni Tintas" width="507" height="900" loading="lazy" decoding="async" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7991.webp" alt="Pizzoni Tintas" width="506" height="900" loading="lazy" decoding="async" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7993.webp" alt="Pizzoni Tintas" width="506" height="900" loading="lazy" decoding="async" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7994.webp" alt="Pizzoni Tintas" width="506" height="900" loading="lazy" decoding="async" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/IMG_7995.webp" alt="Pizzoni Tintas" width="506" height="900" loading="lazy" decoding="async" /></div>
+      <div class="gallery-slide"><img src="assets/Imgs-loja/05.webp" alt="Pizzoni Tintas" width="507" height="900" loading="lazy" decoding="async" /></div>
     </div>
   </div>
 </section>
@@ -864,7 +862,7 @@
 
       <details>
         <summary>
-          <span class="acc-left"><span class="acc-emoji"><img src="assets/Icones/ícone-loja-conceito-anjo.png" alt="Loja Conceito Anjo" style="height:25px;width:auto;position:relative;top:3px;" width="197" height="129" /></span><span class="acc-title">Loja Conceito<span class="mobile-break"> </span>Anjo Store</span></span>
+          <span class="acc-left"><span class="acc-emoji"><img src="assets/Icones/ícone-loja-conceito-anjo.png" alt="Loja Conceito Anjo" style="height:25px;width:auto;position:relative;top:3px;" width="197" height="129" loading="lazy" decoding="async" /></span><span class="acc-title">Loja Conceito<span class="mobile-break"> </span>Anjo Store</span></span>
           <svg class="acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </summary>
         <div class="acc-body">
@@ -984,35 +982,35 @@
 
     <div class="anjo-card">
       <span class="anjo-card-text">Uma loja conceito Anjo Store</span>
-      <img src="assets/Logos_fornecedores/00-Anjo.webp" alt="Anjo Tintas" class="anjo-card-logo" width="500" height="159" />
+      <img src="assets/Logos_fornecedores/00-Anjo.webp" alt="Anjo Tintas" class="anjo-card-logo" width="500" height="159" loading="lazy" decoding="async" />
     </div>
 
     <div class="brands-grid-wrap" id="brandsGridWrap">
     <div class="brands-grid">
-      <div class="brand-chip"><img src="assets/Logos_fornecedores/01-Anjo.webp" alt="Anjo Tintas" width="500" height="161" /></div>
-      <div class="brand-chip"><img src="assets/Logos_fornecedores/02-Suvinil.webp" alt="Suvinil" style="max-height:66px;max-width:77%;" width="500" height="106" /></div>
-      <div class="brand-chip"><img src="assets/Logos_fornecedores/03-Sherwin Williams.webp" alt="Sherwin-Williams" style="max-height:66px;max-width:77%;" width="500" height="248" /></div>
-      <div class="brand-chip"><img src="assets/Logos_fornecedores/04-Lukscolor.webp" alt="Lukscolor" style="max-height:63px;max-width:73.5%;" width="500" height="114" /></div>
-      <div class="brand-chip"><img src="assets/Logos_fornecedores/05-Montana.webp" alt="Montana" width="332" height="116" /></div>
-      <div class="brand-chip"><img src="assets/Logos_fornecedores/06-Golden.webp" alt="Golden" style="max-height:69px;max-width:81%;" width="511" height="157" /></div>
-      <div class="brand-chip"><img src="assets/Logos_fornecedores/07-Inkor.webp" alt="Inkor" width="241" height="62" /></div>
-      <div class="brand-chip"><img src="assets/Logos_fornecedores/08-Hydronorth.webp" alt="Hydronorth" width="401" height="106" /></div>
-      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/09-Selamix.webp" alt="Selamix" width="500" height="149" /></div>
-      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/10-Flexcollor.webp" alt="Flexcollor" width="500" height="93" /></div>
-      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/11-Queveks.webp" alt="Queveks" style="max-height:66px;max-width:77%;" width="311" height="73" /></div>
-      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/12-Sana Agua.webp" alt="Sana Agua" width="500" height="148" /></div>
-      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/13-Atlas.webp" alt="Atlas" width="410" height="97" /></div>
-      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/14-Condor.webp" alt="Condor" style="max-height:66px;max-width:77%;" width="500" height="86" /></div>
-      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/15-Nauber.webp" alt="Nauber" width="387" height="115" /></div>
-      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/16-Roma.webp" alt="Roma" width="468" height="117" /></div>
-      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/17-Adere.webp" alt="Adere" width="157" height="69" /></div>
-      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/18-Norton.webp" alt="Norton" width="500" height="165" /></div>
-      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/19-Alcar.webp" alt="Alcar" width="194" height="79" /></div>
-      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/20-Mirka.webp" alt="Mirka" width="500" height="94" /></div>
-      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/21-Vonder.webp" alt="Vonder" width="440" height="132" /></div>
-      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/22-Bosh.webp" alt="Bosch" style="max-height:66px;max-width:77%;" width="500" height="115" /></div>
-      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/23-Lynus.webp" alt="Lynus" width="500" height="158" /></div>
-      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/24-Lotus.webp" alt="Lotus" style="max-height:66px;max-width:77%;" width="500" height="279" /></div>
+      <div class="brand-chip"><img src="assets/Logos_fornecedores/01-Anjo.webp" alt="Anjo Tintas" width="500" height="161" loading="lazy" decoding="async" /></div>
+      <div class="brand-chip"><img src="assets/Logos_fornecedores/02-Suvinil.webp" alt="Suvinil" style="max-height:66px;max-width:77%;" width="500" height="106" loading="lazy" decoding="async" /></div>
+      <div class="brand-chip"><img src="assets/Logos_fornecedores/03-Sherwin Williams.webp" alt="Sherwin-Williams" style="max-height:66px;max-width:77%;" width="500" height="248" loading="lazy" decoding="async" /></div>
+      <div class="brand-chip"><img src="assets/Logos_fornecedores/04-Lukscolor.webp" alt="Lukscolor" style="max-height:63px;max-width:73.5%;" width="500" height="114" loading="lazy" decoding="async" /></div>
+      <div class="brand-chip"><img src="assets/Logos_fornecedores/05-Montana.webp" alt="Montana" width="332" height="116" loading="lazy" decoding="async" /></div>
+      <div class="brand-chip"><img src="assets/Logos_fornecedores/06-Golden.webp" alt="Golden" style="max-height:69px;max-width:81%;" width="511" height="157" loading="lazy" decoding="async" /></div>
+      <div class="brand-chip"><img src="assets/Logos_fornecedores/07-Inkor.webp" alt="Inkor" width="241" height="62" loading="lazy" decoding="async" /></div>
+      <div class="brand-chip"><img src="assets/Logos_fornecedores/08-Hydronorth.webp" alt="Hydronorth" width="401" height="106" loading="lazy" decoding="async" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/09-Selamix.webp" alt="Selamix" width="500" height="149" loading="lazy" decoding="async" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/10-Flexcollor.webp" alt="Flexcollor" width="500" height="93" loading="lazy" decoding="async" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/11-Queveks.webp" alt="Queveks" style="max-height:66px;max-width:77%;" width="311" height="73" loading="lazy" decoding="async" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/12-Sana Agua.webp" alt="Sana Agua" width="500" height="148" loading="lazy" decoding="async" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/13-Atlas.webp" alt="Atlas" width="410" height="97" loading="lazy" decoding="async" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/14-Condor.webp" alt="Condor" style="max-height:66px;max-width:77%;" width="500" height="86" loading="lazy" decoding="async" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/15-Nauber.webp" alt="Nauber" width="387" height="115" loading="lazy" decoding="async" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/16-Roma.webp" alt="Roma" width="468" height="117" loading="lazy" decoding="async" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/17-Adere.webp" alt="Adere" width="157" height="69" loading="lazy" decoding="async" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/18-Norton.webp" alt="Norton" width="500" height="165" loading="lazy" decoding="async" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/19-Alcar.webp" alt="Alcar" width="194" height="79" loading="lazy" decoding="async" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/20-Mirka.webp" alt="Mirka" width="500" height="94" loading="lazy" decoding="async" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/21-Vonder.webp" alt="Vonder" width="440" height="132" loading="lazy" decoding="async" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/22-Bosh.webp" alt="Bosch" style="max-height:66px;max-width:77%;" width="500" height="115" loading="lazy" decoding="async" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/23-Lynus.webp" alt="Lynus" width="500" height="158" loading="lazy" decoding="async" /></div>
+      <div class="brand-chip brand-extra"><img src="assets/Logos_fornecedores/24-Lotus.webp" alt="Lotus" style="max-height:66px;max-width:77%;" width="500" height="279" loading="lazy" decoding="async" /></div>
     </div>
     </div>
     <button class="brands-toggle" id="brandsToggle">
@@ -1026,7 +1024,7 @@
 <!-- Quando o vídeo institucional estiver no YouTube: troque YOUTUBE_VIDEO_ID abaixo pelo ID real
      e remova "display: none" de .video-thumb no CSS para reativar esta seção. -->
 <div class="video-thumb" data-youtube-id="YOUTUBE_VIDEO_ID">
-  <img src="assets/Imgs-loja/Fachada.webp" alt="Pizzoni Tintas — Vídeo institucional" width="1672" height="941" />
+  <img src="assets/Imgs-loja/Fachada.webp" alt="Pizzoni Tintas — Vídeo institucional" width="1672" height="941" loading="lazy" decoding="async" />
   <div class="play-overlay-wrap">
     <div class="play-overlay">
       <div class="play-btn">
@@ -1123,7 +1121,7 @@
 <footer>
   <div class="container">
     <div class="footer-grid footer-grid--simple">
-      <img src="assets/Assinatura-horizontal.svg" alt="Pizzoni Tintas" width="723" height="154" class="footer-logo" />
+      <img src="assets/Assinatura-horizontal.svg" alt="Pizzoni Tintas" width="723" height="154" class="footer-logo" loading="lazy" decoding="async" />
 
       <div class="socials footer-social">
         <a href="https://www.instagram.com/pizzonitintas/" class="soc-btn" target="_blank" rel="noopener" aria-label="Instagram">
