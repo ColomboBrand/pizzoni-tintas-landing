@@ -25,6 +25,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="image" href="assets/Capa-hero-mobile.webp" media="(max-width: 600px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/Capa-hero.webp" media="(min-width: 601px)" fetchpriority="high" />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" /></noscript>
 
@@ -176,6 +178,7 @@
 
     /* Vídeo */
     .hero-video { position: relative; width: 100%; }
+    .hero-video img { aspect-ratio: 1901 / 541; }
     .hero-video iframe { display: block; width: 100%; height: clamp(520px, 70vw, 600px); border: none; }
 
     /* Hero body */
@@ -571,7 +574,7 @@
       .navbar-phone { display: none; }
       .navbar-burger { display: flex; }
       .mobile-break { display: block; }
-      .hero-video img { height: auto !important; object-fit: contain; object-position: center; }
+      .hero-video img { height: auto !important; aspect-ratio: 1200 / 638; object-fit: contain; object-position: center; }
       .btn-whatsapp { justify-content: center; width: 100%; box-sizing: border-box; }
       .paintcan { padding: 32px 0; }
       .gallery-section { margin-top: 5%; }
@@ -643,7 +646,7 @@
 <nav class="navbar">
   <div class="container">
     <a href="#" class="navbar-logo">
-      <img src="assets/Assinatura-horizontal.svg" alt="Pizzoni Tintas" />
+      <img src="assets/Assinatura-horizontal.svg" alt="Pizzoni Tintas" width="723" height="154" />
     </a>
     <ul class="navbar-nav">
       <li><a href="#audience">Benefícios para você</a></li>
@@ -670,7 +673,7 @@
   <div class="hero-video">
     <picture>
       <source media="(max-width: 600px)" srcset="assets/Capa-hero-mobile.webp">
-      <img src="assets/Capa-hero.webp" alt="Pizzoni Tintas" width="1901" height="541" style="width:100%;height:auto;display:block;" />
+      <img src="assets/Capa-hero.webp" alt="Pizzoni Tintas" width="1901" height="541" fetchpriority="high" loading="eager" decoding="async" style="width:100%;height:auto;display:block;" />
     </picture>
   </div>
 
@@ -731,12 +734,12 @@
     </div>
 
     <div class="pitch-delivery">
-      <img src="assets/Ícone-entrega-rápida.svg" alt="Entrega rápida" />
+      <img src="assets/Ícone-entrega-rápida.svg" alt="Entrega rápida" width="116" height="77" />
       <span>Entrega<br>rápida</span>
     </div>
 
     <div class="pitch-cores" style="display:flex;align-items:center;justify-content:flex-end;">
-      <img src="assets/Selo-5mil-cores.svg" alt="+5 mil cores" style="height:233px;width:auto;" />
+      <img src="assets/Selo-5mil-cores.svg" alt="+5 mil cores" width="168" height="140" style="height:233px;width:auto;" />
     </div>
   </div>
 </section>
@@ -1121,7 +1124,7 @@
 <footer>
   <div class="container">
     <div class="footer-grid footer-grid--simple">
-      <img src="assets/Assinatura-horizontal.svg" alt="Pizzoni Tintas" class="footer-logo" />
+      <img src="assets/Assinatura-horizontal.svg" alt="Pizzoni Tintas" width="723" height="154" class="footer-logo" />
 
       <div class="socials footer-social">
         <a href="https://www.instagram.com/pizzonitintas/" class="soc-btn" target="_blank" rel="noopener" aria-label="Instagram">
