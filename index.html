@@ -584,8 +584,11 @@
       .paintcan-inner a svg { width: 30px; height: 30px; }
       .paintcan-inner .paintcan-footer { font-size: 1.5rem; margin-top: 16px; }
       .territory-copy { text-align: center; }
-      .neigh-grid { justify-content: center; }
+      .neigh-grid { justify-content: center; margin-bottom: 48px; }
       .territory-copy .btn { display: inline-flex; }
+      .territory-copy .section-title { margin-bottom: 36px; }
+      .map-address--inline { margin: 0 0 36px !important; }
+      .territory-copy p { margin-bottom: 40px; }
       .cta-copy { text-align: center; }
       .cta-note { display: block; text-align: center; }
       .contact-tile { justify-content: center; }
@@ -1298,6 +1301,10 @@
         const isMobile = window.matchMedia('(max-width: 600px)').matches;
         if (id === 'audience' && isMobile) {
           document.getElementById('audience').scrollIntoView({ behavior: 'smooth', block: 'start' });
+          return;
+        }
+        if (id === 'regiao' && isMobile) {
+          document.getElementById('regiao').scrollIntoView({ behavior: 'smooth', block: 'start' });
           return;
         }
         const target = id === 'audience' ? document.getElementById('aud-cards') : document.getElementById(id);
